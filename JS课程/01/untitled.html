@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+</body>
+<script>
+var JavaScriptModule = (function () {
+  var javascriptModuleObject, privateFunction;
+
+  privateFunction = function () {
+    return 'privateFunction is called!';
+  };
+
+  javascriptModuleObject = {
+    methodOne:  function () {
+      return 'methodOne is called!';
+    },
+    methodTwo:  function () {
+      console.log(privateFunction());
+      return 'methodTwo is called!';
+    }
+  };
+
+  return javascriptModuleObject; //将javascriptModuleObject替换JavaScriptModule；
+
+})();
+
+
+console.log(JavaScriptModule.methodOne());
+console.log(JavaScriptModule.methodTwo());
+Console输出的结果:
+
+"methodOne is called!"
+"privateFunction is called!"
+"methodTwo is called!"
+</script>
+</html>

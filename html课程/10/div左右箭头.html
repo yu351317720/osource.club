@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+<style>
+.outdiv_l {
+	width: 40px;
+	height: 60px;
+	background-color: rgba(204,204,204,0.5);
+	position: absolute;
+}
+.indiv_l {
+	width: 20px;
+	height: 20px;
+	transform: rotate(45deg);
+	border-color: transparent transparent #000 #000;
+	border-width: 8px 8px 8px 8px; /*border-width: 8px 8px 0px 0px;*/
+	border-style: solid;
+	position: absolute;
+	top: 13px;
+	left: 13px;
+}
+.outdiv_r {
+	width: 40px;
+	height: 60px;
+	background-color: rgba(204,204,204,0.5);
+	position: absolute;	
+	left: 100px;
+}
+.indiv_r {
+	width: 20px;
+	height: 20px;
+	transform: rotate(45deg);
+	border-color: #000 #000 transparent transparent;
+	border-width: 8px 8px 8px 8px; /*border-width: 8px 8px 0px 0px;*/
+	border-style: solid;
+	position: absolute;
+	top: 13px;
+	left: -8px;
+}
+.outdiv_l:hover {
+	background-color: rgba(0,102,204,0.5);
+}
+.outdiv_l:hover .indiv_l {
+	border-color: transparent transparent #F00 #F00;
+}
+.outdiv_r:hover {
+	background-color: rgba(0,102,204,0.5);
+}
+.outdiv_r:hover .indiv_r {
+	border-color: #F00 #F00 transparent transparent;
+}
+</style>
+
+<body>
+<div class="outdiv_l">
+	<span class="indiv_l"></span>
+</div>
+<div class="outdiv_r">
+	<span class="indiv_r"></span>
+</div>
+</body>
+</html>

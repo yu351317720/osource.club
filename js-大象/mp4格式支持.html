@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+<style>
+	#myipt{ position:absolute; top:0px; left:100px; height:18px; outline-color:}
+	#myvideo{ position:absolute; top:25px; left:0px;}
+</style>
+<body>
+<input id="myipt" value="" placeholder="输入片面" />
+<video  id="myvideo" width="800" height="533" controls src="a4.mp4" poster="mv.jpg">
+</video>
+</body>
+<script>
+window.onload = function(){
+		var i = document.querySelector("#myipt").value;
+		var video = document.querySelector("#myvideo");
+		input.onchange =function(){
+			video.src = i +".mp4"
+				/*var fso,s=filespec; // filespec="C:/path/myfile.txt"
+				fso=new ActiveXObject("Scripting.FileSystemObject");
+				if(fso.FileExists(filespec))
+				s+=" 文件存在.";
+				else
+				s+=" 文件不存在.";
+				alert(s);*/ 
+		}
+	}
+</script>
+</html>

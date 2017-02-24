@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>无标题文档</title>
+<style type="text/css">
+label { padding:3px;}
+input { padding:3px;}
+div:after{ 
+content:"*必填";
+color:#F00;
+}
+section{ position:static; background-color:#CCC;}
+
+	
+</style>
+</head>
+
+<body>
+
+<!------------------------ [作业1] ------------------------------------>
+<form action="../ 作业/04/xx.php" method="post" enctype="multipart/form-data" id="zhuce" name="zhuce">
+	
+	<div><label for="user" >显示名称：</label>
+	<input id="user" name="user"  type="text" value="" /></div>
+    <br />
+    
+    <div><label for="pwd" >输入密码：</label>
+	<input id="pwd" name="pwd"  type="password" value="" /></div>
+    <br />
+    
+    <div><label for="pwd2" >确认密码：</label>
+	<input id="pwd2" name="pwd"  type="password" value="" /></div>
+    <br />
+    
+    <div><label for="mail" >注册邮箱：</label>
+	<input id="mail" name="mail"  type="mail" value="xxx@xxx.xxx" /></div>
+    <br />
+    
+    <div><label for="verification" >　验证码：</label>
+	<input id="verification" name="verification"  type="text" value="" /></div>
+    <br />
+    
+    
+	<input id="tijiao" name="tijiao"  type="submit" value="完成" />
+    <input id="reset" name="reset"  type="reset" value="重填" />
+    <br />
+</form>
+
+
+<!---------------------------------作业2------------------------->
+<hr />
+<form action="../ 作业/04/xx.php" method="post" enctype="multipart/form-data" id="denglu" name="denglu">
+	
+	<div><label for="user" >账号：</label>
+	<input id="user" name="user"  type="text" value="" /></div>
+    <br />
+    
+    <div><label for="pwd" >密码：</label>
+	<input id="pwd" name="pwd"  type="password" value="" /></div>
+    <br />
+    
+    <input id="remember" name="remember"  type="checkbox"  checked="checked" />
+    <label  style="font-variant: small-caps;" for="remember"　　　　>记住密码</label>
+    <a href="http://www.baidu.com">找回密码</a><br />
+     
+	<input id="tijiao" name="tijiao"  type="submit" value="登陆" />
+    <input id="reset" name="reset"  type="reset" value="重填" />
+    <br />
+</form>
+
+<!--------------------------作业3------------------------->
+<hr />
+<form action="../ 作业/04/xx.php" method="post" enctype="multipart/form-data" id="order" name="order">
+<section id="order-area" name="order-area">
+	<div>发票类型：<select  selected="selected" id="fapiao-type" name="type" >   
+		<option value="private">个人</option>
+		<option value="common">企业普通</option>
+        <option value="enterprise">企业增票</option>
+	</select></div>
+	<br />
+    <br />
+    
+  <div><label for="yourcomp" >公司抬头：</label>
+	<input id="yourcomp" name="yourcomp"  type="text" value=""  style="width:300px;" /></div>
+    <br />
+    <br />
+    
+    			<p style="float:left;">邮寄地址：</p>
+                <div style="float:left;">
+                  <select  selected="selected" id="city" name="city" >   
+                        <option value="shanghai">上海</option>
+                        <option value="beijing">北京</option>
+                        <option value="guangzhou">广州</option>
+                    </select>
+                </div>
+                <div style="float:left;">
+                      <select  selected="selected" id="area" name="area" >
+                        <option value="xuhui">徐汇区</option>
+                        <option value="pudong">浦东区</option>
+                        <option value="jingan">静安区</option>
+                      </select>
+                 </div>
+      
+   	 
+            <div style="float:left;">
+            <input id="detail" name="detail"  type="text" placeholder="详细地址" style="width:300px;" />
+            </div>
+	<br />
+    <br />
+    </section>
+  <input type="hidden" name="order-number" value="A4521347854" />
+  <input id="tijiao" name="tijiao"  type="submit" value="提交订单" />
+    <input id="reset" name="reset"  type="reset" value="重填" />
+    <br />
+    
+</form>
+
+
+</body>
+</html>

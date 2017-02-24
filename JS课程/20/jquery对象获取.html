@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="../jq1.9.min.js"></script>
+<title>无标题文档</title>
+</head>
+
+<body>
+<div id="aaa" class="abc"></div>
+
+
+<input name="a" value="aaa" type="button">
+<input name="a" value="bbb" type="button">
+<input name="a" value="ccc" type="button">
+<input name="a" value="ddd" type="button">
+
+</body>
+<script>
+
+
+
+var abc = $("input[name='a']"); 
+var temp = '';
+for(i=0;i<abc.length;i++){
+temp += $(abc.get(i)).val();
+alert(temp);
+}
+
+</script>
+</html>

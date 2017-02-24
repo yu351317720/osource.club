@@ -1,0 +1,125 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>negative margin 之叠加</title>
+    <style>
+    *{list-style:none;margin:0;padding:0;font-size: 12px;}
+    .clearfix:after {
+    clear: both;
+    display: block;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+    content: "";
+}
+    .clearfix {*zoom:1;}
+    .goback{clear:both;height:30px;line-height:30px;text-align: center;}
+    
+    .demo{width:400px;}
+    .tab{
+    border-bottom:1px solid #66CC66;
+    }
+    .tab li{
+    float:left;
+    display:inline;
+    margin-left:8px;
+    }
+    .tab li a{
+    background-color:#CCFFCC;
+    border:1px solid #66CC66;
+    color:#666;
+    display:block;
+    margin-bottom:-1px;
+    padding:0 5px;
+    line-height:20px;
+    float:left;
+    font-weight:bold;
+    text-decoration:none;
+    }
+    .tab li .current,
+    .tab li a:hover{
+    background-color:#fff;
+    border-bottom:1px solid #fff;
+    _position:relative;
+    }
+    .cont{padding:10px;border:1px solid #6c6;border-top:0;}
+    </style>
+</head>
+<body>
+    <div class="demo">
+        <div id="demo2">
+                    <ul class="tab clearfix">
+                        <li><a href="#" class="current">Tab One</a></li>
+                        <li><a href="#">Tab Two</a></li>
+                        <li><a href="#">Tab Three</a></li>
+                        <li><a href="#">Tab Four</a></li>
+                    </ul>
+                </div>
+        <div class="cont">荒凉的旷野，一群暴虐的劫匪正在鞭挞一位美丽的姑娘玛丽亚（萝蕾丹娜·卡波莱特 Loredana Cappelletti饰）。幸得迪亚戈（弗兰科·尼罗 Franco Nero饰）的解救。他神秘而冷峻，拖着一副棺材漫步在泥泞的荒野上。迪亚戈带着玛丽亚来到荒凉的小镇，人们对他的到来充满好奇，更对这副棺材里隐藏的秘密而惶惶不安。</div>
+    </div>
+</body>
+</html>三、两列流式布局；
+固定宽度的布局so easy,配合浮动轻松搞定两列自适应布局，三列同理。
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>negative margin 之两列自适应布局</title>
+    <style>
+    *{list-style:none;margin:0;padding:0;font-size: 12px;}
+    .goback{clear:both;height:30px;line-height:30px;text-align: center;}
+    
+    .layout{width:960px;margin:0 auto;background:#f5f5f5;}
+    .main{float:left;width:100%;height:300px;margin:0 -200px 0 0;background:#ccc;}
+    .main-wrap{margin:0 210px 0 0;}
+    .aside{float:left;width:200px;height:300px;background:#f5f5f5;}
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <div class="main">
+            <div class="main-wrap">main</div>
+        </div>
+        <div class="aside">aside</div>
+    </div>
+</body>
+</html>四、去除多余的外边距；
+图文混排，每行最后一个元素的margin值如何处理？单独设置类名消0？通过父层来裁切？使用margin负值吧！
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>negative margin 之去除多余外边距</title>
+    <style>
+    *{list-style:none;margin:0;padding:0;font-size: 12px;}
+    .clearfix:after {
+    clear: both;
+    display: block;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+    content: "";
+}
+    .clearfix {*zoom:1;}
+    .goback{clear:both;height:30px;line-height:30px;text-align: center;}
+    
+    .demo{width:320px;margin:0 auto;padding:10px 0;*overflow:hidden;background:green;}
+    .figure-list{margin:0 -10px 0 0;}
+    .figure-list li{float:left;width:100px;height:100px;margin:0 10px 10px 0;background:#f5f5f5;}
+    </style>
+</head>
+<body>
+    <div class="demo">
+        <ul class="figure-list clearfix">
+            <li>item-1</li>
+            <li>item-2</li>
+            <li>item-3</li>
+            <li>item-4</li>
+            <li>item-5</li>
+            <li>item-6</li>
+        </ul>
+    </div>
+</body>
+</html>

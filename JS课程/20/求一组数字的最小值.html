@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+
+<script>
+var array=[4,67,2,4,7,26278,5,8,4,37,1516,15,0];
+
+	
+//document.write(getMaxarray(array)+'<br/>');
+document.write(getMaxarray(array)+'<br/>');
+document.write(getAverage(array)+'<br/>');
+
+
+ //求一组数的最大/小值
+function getMaxarray(array){	
+	array=array||[];//合法判断
+	if(array.length==0){
+		return "数组为空";
+		}
+	var maxa=array[0];
+	for(var i=0;i<array.length;i++){		
+		maxa=array[i+1]<array[i]?array[i+1]:maxa; 
+		//maxa=array[i+1]>array[i]?array[i+1]:maxa;  		
+		}
+		return maxa;
+	}
+	
+ //求一组数的平均值
+function getAverage(array){	
+	array=array||[];//合法判断
+	if(array.length==0){
+		return "数组为空";
+		}
+	var a=0;
+	for(var i=0;i<array.length;i++){		
+		a +=array[i];				
+		}
+		ave = a/array.length;
+		return ave;
+	}
+</script>
+</body>
+</html>

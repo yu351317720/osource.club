@@ -1,0 +1,48 @@
+<html>
+<head>
+<script type="text/javascript" src="jq1.9.min.js"></script>
+<script type="text/javascript"> 
+$(document).ready(function(){
+  $("#home-item").eq(3).click(function(){
+	  alert($(this).html())
+	  })
+});
+</script>
+</head>
+ 
+<body>
+
+<ul id="home-item">
+	<li>
+    	<img  src="img_for_shili1/download.png" alt="xiazai">
+    	<span>下载app</span>
+    </li>
+    
+    <li>
+    	<img src="img_for_shili1/dingyue.png" alt="dingyue">
+    	<span>订阅主播</span>
+    </li>	
+    
+    <li>
+    	<img  src="img_for_shili1/history.png" alt="history">
+    	<span>历史频道</span>
+    </li>
+    
+    <li>
+    	<img src="img_for_shili1/home.png" alt="home">
+    	<span>个人中心</span>
+    </li>
+    <li>
+    	<img src="img_for_shili1/download.png" alt="shenqing">
+    	<span>申请主播</span>
+    </li>
+</ul>
+ <style>
+ 	*{ margin:0; padding:0}
+	ul li { float:left; margin-right:20px; /*border:1px solid #ccc;*/  position:relative; overflow:hidden; width:100px; height:22px;}
+	ul li span{ color:#069; font-family:"微软雅黑", "黑体", "宋体" ; font-size:14px; line-height:22px; position:relative; top:-4px; }
+	ul li span::selection{ color:#F00;}
+	ul li span:hover{ font-size:16px;}
+ </style>
+</body>
+</html>

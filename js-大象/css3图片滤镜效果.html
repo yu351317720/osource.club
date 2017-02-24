@@ -1,0 +1,55 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>css3图片模糊过滤特效</title>
+<style>
+.ul img{ width:400px; height:200px;}
+.ul{
+list-style: none;
+margin: 50px auto; padding: 0;
+width: 1250px; /* (200+10+4)x3 */
+font-size: 0; /* fix inline-block spacing */
+border: 1px solid red;
+box-shadow: 0 0 5px 5px black, 0 0 10px 10px red;
+
+}
+.ul li{
+display: inline-block;
+*display: inline;
+zoom: 1;
+width: 400px; height: 150px;
+margin: 2px;
+border: 5px solid #fff;
+-moz-box-shadow: 0 2px 2px rgba(0,0,0,.1);
+-webkit-box-shadow: 0 2px 2px rgba(0,0,0,.1);
+box-shadow: 0 2px 2px rgba(0,0,0,.1);
+-webkit-transition: all .3s ease;
+-moz-transition: all .3s ease;
+-ms-transition: all .3s ease;
+-o-transition: all .3s ease;
+transition: all .3s ease; 
+}
+
+.ul:hover li:not(:hover){ 
+-webkit-filter: blur(2px) grayscale(1);
+-moz-filter: blur(2px) grayscale(1);
+-o-filter: blur(2px) grayscale(1);
+-ms-filter: blur(2px) grayscale(1);
+filter: blur(2px) grayscale(1);
+opacity: .5; /* fallback */ 
+}
+
+</style>
+</head>
+<body>
+<ul class="ul">
+<li>
+<img src="mv.jpg"></li>
+<li>
+<img src="mv2.jpg"></li>
+<li>
+<img src="mv1.jpg"></li>
+</ul>
+</body>
+</html>

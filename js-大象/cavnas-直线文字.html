@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+<style type="text/css">
+	canvas { border: #2E858A 1px solid;}
+</style>
+<body>
+<canvas id="mycanvas" height="600" width="800">你的浏览器不支持canvas
+</canvas>
+</body>
+
+<script>
+	var canvas = document.getElementById("mycanvas");
+	var c=canvas.getContext('2d');
+	c.strokeStyle = "red";
+	c.fillStyle = "blue";
+	c.fillRect(0,0,400,400); //fillRect(x, y, width, height)
+	c.moveTo(20,30);
+	c.lineTo(200,60);
+	c.lineTo(120,320);
+	c.closePath();
+	c.stroke();
+	
+	c.beginPath();
+	c.strokeStyle = "green";
+	c.moveTo(160,30);
+	c.lineTo(460,160);
+	c.lineTo(120,320);
+	
+	c.stroke();
+	
+	c.font = " italic bold 24px arial";
+	c.fillText("测试的canvas",60,460);
+	c.strokeText("测试的canvas",60,500);
+	c.textAlign
+</script>
+</html>

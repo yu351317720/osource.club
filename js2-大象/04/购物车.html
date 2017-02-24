@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<style>
+dl,dt,dd{ margin:0; padding:0; text-align:center;}
+dd{ font-size:10px;}
+table{border-collapse:separate; border-spacing:0px 20px; border:#09F solid 2px ;cellpadding:2px;cellspacing:0; }
+.goods{ width:50px; height:50px;}
+tr{ background-color:#E7F3FF;}
+th,td{ border:1px dotted #CCC;}
+.num{ width:50px;}
+</style>
+<body>
+<form>
+<table align="center">
+<tr>
+	<th width="22"><input type="checkbox"></th>
+    <th width="114">商品图片</th>
+    <th width="157">商品信息</th>
+    <th width="153">单价(单位：元)</th>
+    <th width="170">数量</th>
+    <th width="52">小计</th>
+    <th width="74">操作</th>
+</tr>
+
+<tr>
+	<td><input type="checkbox"></td>
+    <td><div><img src="../../meinv-small.png" class="goods"></div></td>
+    <td><dl><dt>商品1</dt><dd>描述1</dd></dl></td>    
+    <td align="center">2.6</td>
+    <td><span>-</span><input type="number"  max="5"  min="0"  class="num"><span>+</span></td>
+    <td>2.6</td>
+    <td><a href="javascript:">加入收藏</a></td>
+</tr>
+
+<tr>
+	<td><input type="checkbox"></td>
+    <td><div><img src="../../meinv-small.png" class="goods"></div></td>
+    <td><dl><dt>商品2</dt><dd>描述2</dd></dl></td>    
+    <td align="center">2.6</td>
+    <td><span>-</span><input type="number"  max="5"  min="0"  class="num"><span>+</span></td>
+    <td>2.6</td>
+    <td><a href="javascript:">加入收藏</a></td>
+</tr>
+
+<tr>
+	<td><input type="checkbox"></td>
+    <td><div><img src="../../meinv-small.png" class="goods"></div></td>
+    <td><dl><dt>商品3</dt><dd>描述3</dd></dl></td>    
+    <td align="center">2.6</td>
+    <td><span>-</span><input type="number"  max="5"  min="0"  class="num"><span>+</span></td>
+    <td>2.6</td>
+    <td><a href="javascript:">加入收藏</a></td>
+</tr>
+<tfoot>
+	<tr>
+    	<td><input type="checkbox"> </td>
+        <td><span>反选</span><span>删除所选商品</span></td>
+        <td><span>总计</span></td>
+    </tr>
+</tfoot>
+</table>
+</form>
+</body>
+<script src="../js/jq1.9.min.js"></script>
+</html>

@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+<style>
+	#box{ width:100px; height: 1500px;}
+	</style>
+<body>
+	<div id="box">
+		<div id="box2"></div>	
+	</div>
+	<div id="box3">
+			
+	</div>	 
+</body>
+<script>
+	var box=document.getElementById('box3');         // 获取元素
+
+	console.log(box.getBoundingClientRect().top);         // 元素上边距离页面上边的距离
+</script>
+</html>

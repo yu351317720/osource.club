@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+<style type="text/css">
+[id=section1] { background-color:#00F;}
+[id*=section2] { background-color:#F00;}
+[id*=\-1]  { color:#9F9;}
+li:fisrt-child {
+	 background-color:#0F6;
+     }
+li:after{
+	content:"(aaa)";
+	}
+	
+:empty{ background-color:#F00;}
+</style>
+<body>
+<div id="section1">示例文本1 </div>
+<div id="section1-1">示例文本1-1 </div>
+<div id="section1-2">示例文本1-2</div>
+<div id="section2">示例文本2 </div>
+<div id="section2-1">示例文本2-1 </div>
+<div id="section2-1">示例文本2-2 </div>
+
+
+<ul contenteditable="false">
+	<li>111111</li>
+    <li>222222</li>
+    <li>333333</li>
+    <li>444444</li>
+    <li>555555</li>
+</ul>
+
+
+<table>
+	<tr>
+    	<td>1</td>
+        <td>2</td>
+        <td>3</td>
+    </tr>
+    <tr>
+    	<td>4</td>
+        <td>5</td>
+        <td></td>
+    </tr>
+</table>
+<div style="width:100px; height:100px;"></div>
+
+
+
+</body>
+</html>

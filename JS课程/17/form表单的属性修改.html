@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+<form method="get" action="" enctype="multipart/form-data" target="_blank" name="form1" id="">
+	<input type="submit" id="submit1" name="submit" value="提交1" >
+</form>
+<form method="get" action="" enctype="multipart/form-data" target="_blank">
+	<input type="submit" id="submit2" name="submit" value="提交2" >
+</form>
+</body>
+<script>
+ 
+	document.forms[1].action = "http://www.163.com";
+	document.form1.action = "http://www.baidu.com";
+</script>
+</html>
+<script>
+	
+	banner = new Image();
+	banner[0].src = "images/111.jpg";
+	banner[1].src = "images/112.jpg";
+	banner[2].src = "images/113.jpg";
+	banner[3].src = "images/114.jpg";
+	function play(){
+	for( var i = 111; i<=banner.length;i++){
+	document.getElementById('img').src = banner[i].src;}
+	
+	}
+</script>
+

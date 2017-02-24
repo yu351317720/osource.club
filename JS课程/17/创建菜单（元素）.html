@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<style>
+
+ul { background-color:#CCC;width:200px; list-style-type: none; margin:0; padding:0; }
+ul li{ cursor:pointer; line-height:50px; width:200px; text-align:center;}
+</style>
+
+<body>
+<input type="button" value="添加" onclick="tianjia()"/>
+<ul onmouseover="on()"></ul>
+</body>
+
+<script>
+
+function  tianjia() {
+		var ul=document.getElementsByTagName('ul')[0];
+		var newLi = document.createElement('li');
+		ul.appendChild(newLi);
+		newLi.innerHTML='新的LI';
+		newLi.style.backgroundColor='green';
+				
+}
+
+function on(){
+	var ul=document.getElementsByTagName('ul')[0];
+	var lis=ul.children;
+	for (var i = 0; i < lis.length; i++) {		
+		lis[i].onmousemove=function  () {	this.style.backgroundColor='red';}//这里只能用onmousemove   如果用onmouseover第一次移动到li上不会促发方法//
+		lis[i].onmouseout=function  ()  {	this.style.backgroundColor='green';}
+	}
+}
+</script>
+</html>

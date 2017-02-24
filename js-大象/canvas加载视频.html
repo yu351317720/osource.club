@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<style>
+	*{ margin: 0px ; padding: 0px;}
+	#video1{display: none;}	
+	#myCanvas{
+		border:  #000000 solid 1px;
+		box-sizing: border-box;
+		background-color: #000000;
+		display: block;
+		position:absolute;
+		z-index: 0;		
+		margin: 0 auto;
+	}
+	.State{
+		position: absolute;
+		top:0px;
+		left:765px;
+		width: 35px;
+		z-index: 100;
+	}
+</style>
+    <body>
+        <canvas id="myCanvas" width="800" height="450">  
+        浏览器不支持canvas           	
+        </canvas>	
+        <video id="video1"  width="0"  controls autoplay loop src="http://suo.im/27nbpI"></video>	
+        <img class="State" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEUAAAAiCAIAAACGHoOcAAACYElEQVRYCe1WPYtiMRS9bic2/gDttLFwV8HOYrbUaqy12F+g8w8EWzuxthFb2cJ+R7QQBO0sVNhVtBPdRvxm9uwLZB4mJpEZBgZyeTzuuzn5OOck4RHZsApYBawCVgGrgFXAKmAV+K+An6hA9Ito4zxI8InivREIBBaLRafTUXQcDAa3AK1W68WJ1WqVSCQUg6iaHoh+E70ID4poUkSlUmHTm7w5B86Hr97dHTDUG42GYl5V04NA44oYAOZxlz+RSGS73ZZKJYyfz+f3+30qlYJG5/MZifmkr0jsKKkzbkoAqDeeVOYrydmUcIbXL5cLmDD+cIPxyWQy8/mcMXxdpXn2pDOHEQNMEeAzmUxuAfju4gBWgTm73Y7TExPpmF/4KNLkUVoVioYwoZ+qMBqNvF6vx+MJBoPL5RKrPx6P6/W62+2iiAiHw2J/DZ9vYg9Z5aus6K6FQiFRYFaJxWJuJM/7/T4OCfZbr9drt9vVahX4XC7n8/kU50fDh4+uTjzqZqLpdMpEFd/D4VDsnUwmx+Mx+Mxms1qtls1mOSYej0ej0WaziSubF02TZ7PzA5gizO8DfmZwKeMUbTab0+kkNfaWRRp/fiqW6WrSwgz9qdfr5XKZOQYfisUibrl0Og1XC4XC4XDgOfi45jdO/UR/dBYBAJgizP1hg/AbD3f0O/vzl+iHYqVOEwCAqcPQH3GQe/3R7DdM8Ez0nWgmTuUU0QTA5wvsqCdn6bACDzjg06/jgZ0jPc3SIv/FfMt+063oY9vZSWN/OpiZ/7NdreJW/QpmP60CVgGrgFXAKvBRCvwDWkiy87oOt8cAAAAASUVORK5CYII=" alt="状态" >
+    </body>
+    <script>
+		window.onload =function(){
+			if(localStorage.time){
+				 v.currentTime = window.localStorage.time;
+			}else{
+				 v.currentTime = 0;
+			}
+			
+		};
+		
+		function $(x){
+			return document.querySelector(x);
+		}
+        var v = $("#video1");
+        var c = $("#myCanvas");
+		 
+        ctx = c.getContext('2d');
+		var timer;
+		
+		
+        v.addEventListener('play', function() {
+			 
+             timer = window.setInterval(function() {
+                ctx.drawImage(v, 0, 0, 800, 450)
+            }, 20);
+        }, false);
+		
+		c.addEventListener('click',function(){
+			if(timer){
+				clearInterval(timer);timer=null;
+				v.volume = 0;
+			}else{
+				v.volume = 1;
+				timer = window.setInterval(function() {
+                ctx.drawImage(v, 0, 0, 800, 450)
+            }, 20);
+			}
+		},false);
+		
+		
+		window.onbeforeunload = function (){
+			window.localStorage.time = v.currentTime;b
+		}
+		
+    </script>
+
+</html>

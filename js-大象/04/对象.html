@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+
+<script>
+	var Obj = {
+		"1": 123,
+		"b1":"bbbb",
+		cd: "bbbbcccc",
+		"06":7   //这里必须给06加引号，不然Obj["06"]获取不到值   只能通过Obj[06]访问
+	};
+	var  eee = Obj.cd;
+	 alert(eee);
+	alert( Obj["06"] );	//或者Obj[6]   
+	alert( Obj.cd );
+	alert( Obj["1"] );
+	alert( Obj["b1"] );	
+</script>
+
+</body>
+</html>

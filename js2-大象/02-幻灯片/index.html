@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript" src="img/jq1.9.min.js"></script>
+
+<style>
+#turnImg{ position:relative;}
+#zuo_you{width:600px; height:340px; margin:0 auto; position:relative;}
+
+body,ul,li,img{ margin:0;padding:0px; position:relative; }
+	#turnImg{width:600px; height:340px; position:absolute; top:0px; left:0px;}
+	#Imgs{list-style:none; width:6000px; height:340px; margin:0 auto; position:absolute; left:0px; }
+	#Imgs li{ float:left; left:0px;width:600px; height:340px; }
+	/*ol {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	position: absolute;
+	z-index: 9;
+	left: 49%;
+	top:300px;
+	}
+	ol li {
+	width: 30px;
+	height: 30px;
+	background-color: #03C;
+	color: #fff;
+	text-align: center;
+	line-height: 24px;
+	margin-left:5px;
+	display: inline-block;*/      /*行内块状*/
+	}
+</style>
+</head>
+<body>
+<div id="turnImg">    
+	<ul id="Imgs">
+        <li><img src="img/1.jpg" width="600"/></li>
+        <li><img src="img/2.jpg" width="600"/></li>
+        <li><img src="img/3.jpg" width="600"/></li>
+        <li><img src="img/4.jpg" width="600"/></li>
+        <li><img src="img/5.jpg" width="600"/></li>
+        <li><img src="img/6.jpg" width="600"/></li>
+    </ul>
+    <!--<ol id="num">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+ 	 </ol>-->
+    
+</div>
+<button id="l_btn" value="左">左
+    </button>
+    
+    <button id="r_btn" value="右">右
+    </button>
+</body>
+<script>
+
+
+//左右事件
+$(function(){
+/*$("#Imgs li").each(function(index, element) {
+    $(this).index();
+});*/
+var l = $("#Imgs li").length;
+var current = 0;
+var speed =1000;
+var imgW = $("#turnImg").width();
+
+$(".outdiv_l").click(function(){
+ 	
+	var iTanget = - current * imgW;
+	alert(iTanget);
+	$("#Imgs").animate({left:-imgW},speed);
+	current++;
+})
+
+
+
+
+
+
+})
+
+
+
+</script>
+</html>
+
+
+

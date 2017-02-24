@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+<script src="grayscale.js" type="text/javascript"></script> <script type="text/javascript"> window.onload=function(){ //火狐网页变灰 grayscale(document.body); } </script>
+<style>
+html {
+overflow-y:scroll;
+filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+-webkit-filter: grayscale(100%);
+}
+/*让整个网站整体变灰色，but只能影响前景元素，body的背景不起作用*/
+
+#box {
+	position: absolute;
+	margin: 0 auto;
+	width: 600px;
+	height: 340px;
+	
+}
+#img {
+	width: 600px;
+	filter: alpha(opacity=100); /*IE滤镜，透明度50%*/
+	-moz-opacity:1; /*Firefox私有，透明度50%*/
+	opacity: 1;/*其他，透明度50%*/
+}
+#aaa {
+	position: absolute;
+	top: 150px;
+	left: 30px;
+}
+#bbb {
+	position: absolute;
+	top: 150px;
+	left: 520px;
+}
+</style>
+<body onload="bofang()">
+<div id="box"> 
+	<img  src="1.jpg" alt="banner" id="img"  onmouseover="tingzhi()" onmouseout="bofang()"/>
+	<input id="aaa" type="button" onclick="next(1)" value="<" />
+	<input id="bbb" type="button" onclick="next(0)" value=">" />
+</div>
+<script>
+var banner = new Array();
+	banner[0] = '1.jpg';
+	banner[1] = '2.jpg';
+	banner[2] = '3.jpg';
+	banner[3] = '4.jpg';
+	banner[4] = '5.jpg';
+	banner[5] = '6.jpg';
+
+for(i=0;i<banner.length;i++){
+	var imgObj = new Image();		
+	imgObj.src =banner[i];
+	
+}
+
+var k = 0;
+
+//自动播放的方法
+function play(){
+	if(k>banner.length-2){k=-1}
+	k +=1;
+	document.getElementById('img').src =banner[k];
+				 
+		
+}
+		
+//左右翻页的方法
+function next(arr){
+	if(arr == 1){
+		if(k<1){k=banner.length}			
+		clearInterval(timer);
+		k -=1;
+		document.getElementById('img').src =banner[k]
+		}else if(arr == 0){	
+		if(k>banner.length-2){k=-1}		
+		clearInterval(timer);
+		k +=1;
+		document.getElementById('img').src =banner[k];								
+	}		
+}
+	
+//播放的方法
+function bofang(){
+ timer = setInterval(play,2000);
+}
+	
+	
+//停止的方法
+function tingzhi(){
+clearInterval(timer);
+}
+</script>
+</body>
+</html>

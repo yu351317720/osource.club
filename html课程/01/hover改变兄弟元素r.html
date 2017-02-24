@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+ 
+<title>Examples</title>
+<style type="text/css">
+
+.demo{ width:100px; border:#0F0 solid 1px;}
+#small { font-size:12px; color:#F00; background-color:#993;}
+/*--------------------------------------------*/
+#b1{ background-color:#999}
+#b2{ background-color:#ffe; display:none;}
+#b3{ background-color:#0f0; display:none;}
+#b4{ background-color:#00f; display:none;}
+#b1:hover +#b2,#b1:hover ~* {display:block; }
+
+
+
+/*hover可以控制兄弟元素以及子孙元素样式*/
+</style>
+</head>
+<body>
+
+<div id="aaa">
+	<div id="b1">bbbbb1111</div>
+    <div id="b2">bbbbb2222</div>
+    <div id="b3">bbbbb3333</div>
+    <div id="b4">bbbbb4444</div>
+</div>
+--------------------------------
+<div class="demo" id="demo">
+    <p>我就想试一试我试我就想试一试我就想试一试我就想试一试</p>
+    <span id="small">就想试一</span>
+</div>
+<script>
+// js无法直接通过class获取对象，必须自己写一个方法,这样效率会非常低，原生js里最好用id获取，
+// 直接用id获取domo对象
+var oBox=document.getElementById('demo');
+// slice() 方法可从已有的数组中返回选定的元素。
+// 您可使用负值从数组的尾部选取元素。
+// 如果 end 未被规定，那么 slice() 方法会选取从 start 到数组结尾的所有元素。
+// 此处需要根据需求自行修改slice()的值，以达到要显示的内容
+var demoHtml = oBox.innerText.slice(1,11)+'<span id="ell">...</span>';
+// 填充至指定位置
+oBox.innerHTML = demoHtml;
+
+var oell=document.getElementById('ell');
+oell.style.color = 'red';
+oell.style.border = '#0F0 solid 1px';
+//oell.style.display = 'inline-block';
+//oell.style.paddingBottom = '10px';
+
+
+</script>
+</body>
+</html>

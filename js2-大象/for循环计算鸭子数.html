@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+<h6>小鸭1元3只，母鸭5元1只，公鸭3元1只，问：100元买100只，每个是多少只?</h6>
+</body>
+<script>
+	var x , y ,z,i=1; //鸭子的个数	
+		
+	for(y=0;y<20;y++){
+		for(z=0;z<33;z++){
+			for(x=0;x<100;x++){
+				if( (x+y+z ==100) && (x/3 +5*y +3*z ==100) ){					
+					document.write("<br>");
+					document.write(i+"、小鸭子:" +x+"  母鸭:"+y+"  公鸭:"+z );
+					i++;
+				}
+			}
+		}
+	}
+</script>
+</html>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+<style>
+	#box{color: red; width: 100px; height: 100px;}
+</style>
+<body>
+	<div id="box">
+		aaaa
+	</div>
+</body>
+<script>
+	var box = document.getElementById("box");
+	var style = window.getComputedStyle(box,null)
+	alert( style.width );
+	
+	
+	var a = 31;
+	alert( a.toString(16) );//方法中的参数是定义要转换成的进制类型
+	
+</script>
+</html>

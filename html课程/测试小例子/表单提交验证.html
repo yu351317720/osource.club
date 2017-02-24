@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+<form>
+<input type="text" name="aaa" id="aaa" align="middle" value="" onblur="a()"/>
+<input type="submit" name="submit" id="submit" value="b方法" onclick="b()"/>
+</form>
+</body>
+<script>
+	function a(){
+		//var recat  = RegExp();//RegExp 对象有 3 个方法：test()、exec() 以及 compile()。
+		var text = document.getElementById('aaa');				
+		var  recat=/.+@.+\.+/g; 
+		//var  recat=/^\S{1,11}$/g; 
+		 //.+([';]+|(--)+).*/gi;
+		 //邮箱     
+		if(recat.test(text.value) == false){
+				alert("请输入正确的邮箱地址！");
+		}else{
+				alert(text.value);
+		};
+		
+		}
+	
+	//上述例子也可以写成
+	function b(){
+		var recat  = RegExp('^ab');//RegExp 对象有 3 个方法：test()、exec() 以及 compile()。
+		var text = document.getElementById('aaa');				
+		alert(recat.exec(text.value)); //exec() 方法检索字符串中的指定值。返回值是被找到的值。如果没有发现匹配，则返回 null。
+	}
+	
+	//RegExp()可以参入多个表达式，例如同时查找 a和b
+	
+	function b1(){
+		var recat  = RegExp('a','b');//RegExp 对象有 3 个方法：test()、exec() 以及 compile()。
+		var text = document.getElementById('aaa');				
+		alert(recat.exec('abbbbcccc')); 
+	}
+</script>
+</html>

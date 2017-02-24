@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+</body>
+<script>
+	F();//这里调用时错的
+	var F= function(){
+		e = 666;
+		alert(111);
+		
+	};
+	//表达式函数不能提前运行，
+	F();//这里调用时对的
+	document.write(e);
+</script>
+</html>

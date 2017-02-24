@@ -1,0 +1,24 @@
+/* CSS Document */
+
+
+.guess_like_title{ height:33px;	border-bottom:#CCC solid 1px;}
+	
+.guess_like_title p{ font-size:22px;width:222px;padding-bottom:16px;cursor:default;color:#202020;display:block;float:left;}
+	
+.guess_like_title span{ display:inline-block; float:right; top:10px;}
+
+.guess_like_content{ width:1250px;padding-top:20px; position:absolute; top:33px; left:0px;}
+
+.kecheng_child{ width:235px;float:left; margin:3px;  position:relative; }
+
+.kecheng_child  img{ width:235px; }
+
+.kecheng_child  p{ bottom:24px;  position:relative;}
+
+.kecheng_child  div  p{ color:#5fb41b; bottom:20px; left:20px; position:relative;display:inline-block;}
+
+.kecheng_child  div  span a{ float:right; color:#999; bottom:20px; right:0px; position:relative;}
+
+.kecheng_child  div  span a:hover{ color:#09F;}
+
+.font_white{ color:#FFF; background-color:#666;}

@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+<style>
+.data_custom{ display:inline-block; text-decoration:none; position:absolute; top:100px; left:100px;}
+.data_custom:hover{ color:transparent;}
+.data_custom:hover:before{
+	content:attr(data-aaa);
+	color:#F00;
+	/*position:absolute; 
+	left:0px;*/}
+</style>
+<body>
+<a href="#" class="data_custom" data-aaa=" 操说了别碰我" data-id="custom" >别点我，雅蠛蝶~。~</a>
+</body>
+</html>

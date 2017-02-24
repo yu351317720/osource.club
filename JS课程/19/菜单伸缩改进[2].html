@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript" src="jquery-1.6.4.min.js"></script>
+
+<script>
+$(document).ready(function(){
+  $("dd").click(function(){	
+    $(this).nextAll("dt").toggle();
+	$(this).parent().siblings().children('dt').hide();
+  });
+  
+  
+});
+</script>
+</head>
+<style>
+dl dd {padding:0px; margin:0px; width:100px;}/*不知道为啥这里dt不能清除间距，会有为题。*/
+dd{ border:#0F0 solid 1px; cursor:pointer; }
+dt{ border:#f00 solid 1px; display:none;  width:100px;}
+</style>
+<body>
+<dl>
+    <dd id="dd1">11111</dd>
+    <dt>aaaaa</dt>
+    <dt>bbbbb</dt>
+    <dt>ccccc</dt>
+    <dt>ddddd</dt>
+</dl>
+
+<dl>
+    <dd id="dd2">22222</dd>
+    <dt>aaaaa</dt>
+    <dt>bbbbb</dt>
+    <dt>ccccc</dt>
+    <dt>ddddd</dt>
+</dl>
+
+<dl>
+    <dd id="dd3">33333</dd>
+    <dt>aaaaa</dt>
+    <dt>bbbbb</dt>
+    <dt>ccccc</dt>
+    <dt>ddddd</dt>
+</dl>
+
+
+</body>
+</html>

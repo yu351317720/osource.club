@@ -1,0 +1,6 @@
+/* CSS Document */
+
+#box{ position:relative;}
+#box1{ position:absolute; left:0px; top:50px; width:500px; height:200px; border:#999 solid 1px; z-index:0; background-color:#00F; overflow:hidden;}
+#box2{ position:absolute; left:300px; top:0px; width:700px; height:300px; border:#039 solid 1px; z-index:10; background-color:#09C; overflow:hidden;}
+#box3{ position:absolute; left:800px; top:50px; width:500px; height:200px; border:#999 solid 1px; z-index:0; background-color:#933; overflow:hidden;}

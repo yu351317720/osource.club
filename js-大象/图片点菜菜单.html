@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>点菜菜单效果</title>
+</head>
+<style>
+	*{ margin: 0;padding: 0;}
+	body,html{
+		width:  100%;
+		background: url(../0.jpg);
+	}
+	body{overflow: hidden;}
+	#wrap{
+		list-style: none;
+		position: absolute;
+		left: 5%;
+		top:5%;
+		
+	}
+	#wrap li{
+		width: 125px;	height: 125px;	box-shadow: 0 0 1px #000; border: 1px solid red; border-radius: 10px;position: absolute; transition: 1s left 1s top; transform: rotate(-30deg); cursor: pointer;
+	}
+	#wrap li img{
+		transform: scale(0.92);display: block; border-radius: 10px; transition: 1s transform; 
+	}
+	#btn input{
+	height: 90px; width: 40px;	position: fixed;top: 50%; margin-top: -45px; line-height: 90px;background-color: rgba(232,214,215,0.6); border: none; font-size: 30px; font-family: "Microsoft yahei" ;		
+	}
+	#btn input:hover{
+		background:#9E9D9D;
+	}
+	#btn #left{
+		left: 0; border-radius: 0 5px 5px 0;
+	}
+	#btn #right{
+		left: 0; border-radius:  5px 0 0  5px ;
+	}
+</style>
+<script>
+window.onload = function(){
+	var ul = document.querySelector("#wrap ul");
+	var wrap = document.querySelector("#wrap ");
+	var btn_div = document.querySelector("#btn ");
+	var inputs = document.querySelector("#btn input");
+	var lis = document.querySelector("#wrap ul li");
+	var imgs ,Li; 
+	var width = heght = 125;
+	var length = 24;
+	var text ="";
+	function init (){
+		for	(var i=0 ; i<length; i++){
+			text+='<li><img src="img/'+ (i+1) + '.jpg"</li>';
+		}
+		ul.innerHTML = text;
+	}
+	function lipostion(){
+		var tw = wrap.offsetWidth;
+		var wh = wrap.offsetHeight;
+		var ml =(tw-6*width)/5;
+		var mt =(wh-4*heght)/3;
+		for(var i=0; i<li.length;i++){
+			var iX = i%6;
+			var iY =parseInt(i/6);
+			li[i].style.left = iX*ml+width*i+"px";
+			li[i].style.top = iY*mt+height*i+"px";
+			li[i].style.backgroundPosition = -iX*width+"px" +(-iY*height)+"px";
+			
+		}
+	}	
+
+}
+</script>
+<body>
+<div id="wrap">
+	<ul>
+		<li><img src="" alt="11"></li>
+	</ul>
+	<div id="btn">
+		<input id="left" type="button" value="<">		
+		<input id="right" type="button" value=">">
+	</div>
+</div>
+</body>
+</html>

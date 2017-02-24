@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+<form>
+	<input type="checkbox" value=""  checked="false"/>
+    <input type="checkbox" value=""  checked="false" />
+    <input type="checkbox" value=""  />
+    <input type="checkbox" value=""  />
+    <input type="checkbox" value=""  checked="false"/>
+    <input type="checkbox" value="" />
+</form>
+<p id="p"></p>
+</body>
+<script>
+var p = document.getElementById("p");
+function aaa(){
+var arr1 = [];
+var inputs = document.getElementsByTagName("input");
+	for(var i = 0;i<inputs.length ; i++){
+		(inputs[i].checked == false) ? inputs[i].value=0 : inputs[i].value=1 ;
+		arr1.push(inputs[i].value);
+		p.innerHTML = arr1;		
+	}
+	alert(arr1);
+}
+
+
+
+function indexOf(arr, str){
+    // 如果可以的话，调用原生方法
+    if(arr && arr.indexOf){
+        return arr.indexOf(str);
+    }
+     
+    var len = arr.length;
+    for(var i = 0; i < len; i++){
+        // 定位该元素位置
+        if(arr[i] == str){
+            return i;
+        }
+    }
+     
+    // 数组中不存在该元素
+    return -1;
+}
+
+
+
+var index = indexOf(aaa(), "0");
+(index == -1) ?  alert("已经全选了"):alert("第"+(index+1)+"个input没选中") // 弹出0
+</script>
+</html>

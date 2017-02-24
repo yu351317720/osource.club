@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+<style>
+	#div1{ 
+	width:100px;
+	height:100px;
+	position:absolute;
+	left:100px;
+	top:0px;
+	border:4px solid red;
+	}
+
+</style>
+<body>
+<div  id="div1"></div>
+
+</body>
+
+<script>
+var div1 = document.getElementById("div1")
+
+	var i = 10;
+	function F(){
+			i += 10;
+			this.style.left = i+ "px";
+	}
+div1.onclick = function(){ 
+setInterval(F.bind(this),100); //这里不能使用F.call(this)  因为call是立即调用
+//alert(this);
+}
+	//下面是改进型
+	
+	
+function myProxy(obj){
+	return function(){ F.call(obj)}	
+}
+div1.onclick = function(){
+setInterval(myProxy(this),100)
+}
+	
+</script>
+</html>

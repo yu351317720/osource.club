@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+
+<input id="aaa" type="text" name="user" value="" onBlur="pipei(this.value)">
+</body>
+
+<script>
+function pipei(a){
+	
+	//var reCat = /^[\$_a-zA-Z]/gi;
+	//var reCat = /^[^_a-zA-Z\$]/gi;
+	//var reCat = /ap?le/gi; //p字母出现0或1次  如ale  aple
+	//var reCat = /ap+le/gi; //p字母至少出现1次
+	//var reCat = /ap{0,8}le/gi; //
+	var reCat = /^[A-Z][A-Za-z]+[0-9]+|[0-9]+[A-Za-z]+/gi;
+	alert(reCat.test(a));
+	}
+</script>
+</html>

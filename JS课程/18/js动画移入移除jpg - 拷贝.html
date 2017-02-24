@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+<style>
+.aaa {
+	width: 200px;
+	height: 200px;
+	text-align:center;
+	line-height:200px;
+	background-color:#99C;
+	position:relative;
+	overflow:hidden;
+	float:left;
+	margin:5px;
+}
+.bbb {
+	width:100px;
+	height:20px;	
+	line-height:20px;
+	margin:0 auto;
+	text-align:center;
+	background-color:#C93;
+	position:absolute;	
+	left:50px;	
+}
+
+</style>
+<body>
+<div class="aaa"  onMouseOver="down(this)" onMouseOut="up(this)">外套
+<div class="bbb"> 新品上市</div>     
+</div>
+
+
+<div class="aaa"  onMouseOver="down(this)" onMouseOut="up(this)">外套
+<div class="bbb"> 新品上市</div>     
+</div>
+
+
+<div class="aaa"  onMouseOver="down(this)" onMouseOut="up(this)">外套
+<div class="bbb"> 新品上市</div>     
+</div>
+
+</body>
+<script>
+//var aaa = document.getElementsByTagName('div')[0];
+
+//alert(bbb.id);
+ function down(a){	
+	var b = a.childNodes[1];//childNodes包含了换行的空格所以这里为[1]。
+	var b_style = window.getComputedStyle(b, null);
+	var height =  b_style.getPropertyValue("height");
+	//b.style.top = -height;
+	
+	var h = parseInt(height);	
+	var t = setInterval(playB,20);
+	var i = -h;
+	function playB(){	
+	if(i >= 0){		
+		clearInterval(t);
+	}else{	
+	b.style.top = i+1+'px';
+	i = parseInt(b.style.top);	
+	}
+	}
+}
+	
+function up(a){
+	var b = a.childNodes[1];//childNodes包含了换行的空格所以这里为[1]。
+	var b_style = window.getComputedStyle(b, null);
+	var height =  b_style.getPropertyValue("height");
+	var h = parseInt(height);
+	var timer = setInterval(playA,20);
+	var i = 0;		
+	function playA(){	
+	if(i <= -h){				
+		clearInterval(timer);
+	}else{	
+	b.style.top = i-1+'px';	
+	i = parseInt(b.style.top);	
+	}
+	}
+}
+	
+
+</script>
+</html>

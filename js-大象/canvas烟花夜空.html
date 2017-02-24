@@ -1,0 +1,325 @@
+<!doctype html>
+<html>
+<head><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>HTML5 Canvas绘制恬静夜景</title><base target="_blank" />
+<meta charset="utf-8">
+<style>*{margin:0px;padding:0px;}body{text-align:center;}a{color:#333333;}</style>
+</head>
+<style>
+	*{
+		margin: 0px; padding: 0px;
+	}
+	body{
+		width: 100%;
+		height: 100%;
+		background-color:black;
+		overflow: hidden;
+		
+	}
+	#h1{
+		margin: auto;
+		color: white;
+		border: 1px solid white;
+		display: block;
+		width: 10em;
+		height: 30px;
+		text-align: center;
+		line-height: 30px;
+	}
+	.firework{
+		position: absolute;
+		background-color: #EC3235;
+		width: 10px; height: 20px; 
+		border-radius: 50%;}
+	.boom{
+		position: absolute;
+		width: 5px;
+		height: 5px;
+		border-radius: 50%;
+		box-shadow: 
+		
+	}
+	#hovertreecanvas{
+		display:block;
+		margin:0px auto;
+		border:1px solid #aaa;
+	}
+</style>
+<body>
+
+<canvas id="hovertreecanvas" >
+此浏览器不支持canvas，请更换浏览器
+</canvas>
+
+
+<script>
+
+hovertreenight ();
+setInterval(hovertreenight, 4000);
+function hovertreenight () { 
+	canvas = document.getElementById('hove'+'rtreecanvas');
+	canvas.width=1920;
+	canvas.height=1080;
+	context=canvas.getContext('2d');
+
+	drawing(context);
+	drawing_start_1(context);
+	drawing2(context);
+	starts();
+	draw_moon(context);
+	draw_moon2(context);
+	draw_moon3(context);
+}
+
+function starts(){
+	for(var i=0;i<100;i++){
+	var r=Math.random()*10+3;
+	var x=Math.random()*canvas.width;
+	var y=Math.random()*420;
+	var a=Math.random()*360;
+	drawing_start_2(context,r,r/2,x,y,a);//画繁星分布区域
+	}
+}
+
+
+function draw(cxt){
+cxt.beginPath();
+for(i=0;i<56;i++){
+cxt.moveTo(0,i*20);
+cxt.lineTo(1920,i*20);
+cxt.stroke();
+}
+}
+
+function draw2(cxt){
+cxt.beginPath();
+for(i=0;i<56;i++){
+cxt.moveTo(i*20,0);
+cxt.lineTo(i*20,1080);
+cxt.stroke();
+}
+}
+
+function drawing(cxt){ //画整体背景颜色渐变
+var linearGrad=cxt.createLinearGradient(500,0,500,1080);
+linearGrad.addColorStop(0.0,'black');
+linearGrad.addColorStop(1.0,'blue');
+cxt.fillStyle=linearGrad;
+cxt.fillRect(0,0,1920,1080);
+cxt.fill();
+}
+
+function drawing2(cxt){ //画房子
+cxt.beginPath();
+cxt.moveTo(0,1080);
+cxt.lineTo(1920,1080);
+cxt.lineTo(1920,1080);
+cxt.lineTo(0,1080);
+cxt.closePath();
+cxt.fillStyle="black";
+cxt.fill();
+cxt.stroke();
+
+cxt.beginPath();
+cxt.moveTo(200,1080);
+cxt.lineTo(360,1080);
+cxt.lineTo(360,480);
+cxt.lineTo(200,480);
+cxt.closePath();
+cxt.fillStyle="black";
+cxt.fill();
+cxt.stroke();
+
+
+cxt.beginPath();
+cxt.moveTo(120,480);
+cxt.lineTo(280,420);
+cxt.lineTo(440,480);
+cxt.closePath();
+cxt.fillStyle="black";
+cxt.fill();
+cxt.stroke();
+
+cxt.beginPath();
+cxt.moveTo(320,435);
+cxt.lineTo(320,420);
+cxt.lineTo(340,420);
+cxt.lineTo(340,442);
+cxt.closePath();
+cxt.fillStyle="black";
+cxt.fill();
+cxt.stroke();
+
+cxt.beginPath();
+cxt.moveTo(240,520);
+cxt.lineTo(260,520);
+cxt.lineTo(260,500);
+cxt.lineTo(240,500);
+cxt.closePath();
+cxt.fillStyle="yellow";
+cxt.fill();
+cxt.stroke();
+
+cxt.beginPath();
+cxt.moveTo(240,510);
+cxt.lineTo(260,510);
+cxt.moveTo(250,500);
+cxt.lineTo(250,520);
+cxt.closePath();
+cxt.stroke();
+}
+
+function drawing_start_1(cxt){ //星星背景
+cxt.beginPath();
+cxt.rect(0,0,1920,1080);
+cxt.closePath();
+
+cxt.stroke();
+}
+
+function drawing_start_2(cxt,outerR,innerR,x,y,rot){ //画星星 
+
+cxt.beginPath();
+for(var i=0;i<5;i++){
+cxt.lineTo((Math.cos(18+i*72-rot)/180*Math.PI)*outerR+x,
+-Math.sin((18+i*72-rot)/180*Math*outerR+y));
+
+cxt.lineTo(Math.cos((54+i*72-rot)/180*Math.PI)*innerR+x,
+-Math.sin((54+i*72-rot)/180*Math.PI)*innerR+y);
+}
+cxt.fillStyle="#cf3"
+cxt.strokeStyle="#fd5";
+cxt.lineJoin="round";
+cxt.fill();
+cxt.closePath();
+cxt.stroke();
+}
+	
+function draw_moon(cxt){ //画月亮 hovertree.com
+cxt.beginPath();
+cxt.arc(200, 200, 100, 0.6 * Math.PI, 1.3 * Math.PI);
+cxt.bezierCurveTo(140, 119, 93, 224, 169, 295);
+cxt.fillStyle="#ddd";
+cxt.fill();
+cxt.stroke();
+}
+
+function draw_moon2(cxt){ //月亮的眼睛。。。
+cxt.beginPath();
+cxt.moveTo(110,180);
+cxt.lineTo(115,180);
+cxt.stroke();
+}
+
+function draw_moon3(cxt){ //zzz...
+cxt.beginPath();
+cxt.moveTo(40,80);
+cxt.lineTo(60,80);
+cxt.lineTo(40,100);
+cxt.lineTo(60,100);
+cxt.strokeStyle="yellow"
+cxt.stroke();
+
+
+cxt.beginPath();
+cxt.moveTo(63,108);
+cxt.lineTo(80,108);
+cxt.lineTo(63,123);
+cxt.lineTo(80,123);
+cxt.strokeStyle="yellow"
+cxt.stroke();
+
+cxt.beginPath();
+cxt.moveTo(86,130);
+cxt.lineTo(100,130);
+cxt.lineTo(86,142);
+cxt.lineTo(100,142);
+cxt.strokeStyle="yellow"
+cxt.stroke();
+}
+// http://www.cnblogs.com/jihua/p/webfront.html
+</script>
+
+</body>
+
+
+<script>
+	function color(){ //两种定义随机颜色的方法
+			var c =[1,2,3,4,5,6,7,8,9,"a","b","c","d","e","f"]
+			var colr ="";
+			for(var i=0;i<6;i++){
+				var n = Math.ceil(Math.random()*15)
+				colr += c[n];				
+			}
+			return "#"+colr;
+	}
+	function color1(){  
+			var r = Math.floor(Math.random()*255)
+			var g = Math.floor(Math.random()*255)
+			var b = Math.floor(Math.random()*255)
+			var a = Math.random();
+			return "rgba(" + r + "," + g + "," + b + "," + a +")";
+	}
+	
+	document.onclick = function(ev){		
+		var ev = ev||window.event;
+		var x = ev.clientX;
+		var y = ev.clientY;
+		//console.log(arguments);
+		var a = document.body.offsetHeight;//google 不兼容
+		var h =document.documentElement.clientHeight;		
+		createFirework(x,y,h);
+	}
+	
+	
+	function createFirework(x,y,h){
+		var div = document.createElement('div');
+		div.className = "firework";
+		div.style.left = x+"px";
+		div.style.top = h+"px";
+		div.style.backgroundColor= color();
+		document.body.appendChild(div);
+		
+		var speed =10;
+		var timer =setInterval(function(){
+			div.style.top = div.offsetTop - speed +"px";
+			if(div.offsetTop<=y){				
+				div.style.top = y+"px"
+				clearInterval(timer);timer =null;
+				document.body.removeChild(div);
+				Boom(x,y,h);
+			}
+	},1920/60)
+		
+		
+	function  Boom(x,y,h){			
+		var n= Math.ceil(Math.random()*50) +50;			
+		var arr = [];
+		for(var i=0;i<n;i++){
+			arr[i] = document.createElement('div');
+			arr[i].className = "boom";
+			arr[i].style.left = x+"px";
+			arr[i].style.top = y+"px";	
+			arr[i].speedX =Math.random()*20 -10 ;				//-10到10之间的随机速度
+			arr[i].speedY =Math.random()*20 -10 ;				
+			document.body.appendChild(arr[i]);
+			console.log(i);
+		}
+					
+			
+	 t = setInterval(function(){
+			for(var i=0;i<n;i++){
+				arr[i].style.left = arr[i].offsetLeft+arr[i].speedX +"px";
+				arr[i].style.top = arr[i].offsetTop+arr[i].speedY +"px";
+				arr[i].speedY = arr[i].speedY+1;
+				arr[i].style.backgroundColor = color1();//随机颜色
+				if(arr[i].offsetLeft<0||arr[i].offsetLeft>document.body.offsetWidth||arr[i].offsetTop>h){
+					document.body.removeChild(arr[i]);
+				}
+			}
+		},1920/60)
+	}
+}
+	
+</script>
+</html>

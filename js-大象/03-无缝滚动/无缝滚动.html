@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+<style>
+ ul , li { margin:0; padding:0; list-style:none;}
+ #box1{  border:#F66 solid 1px;width:1200px; height:120px; position:relative; overflow:hidden; box-shadow: 0 0 5px 5px black, 0px 0px 10px 10px yellow; }
+ #box2 { width:2400px;}
+ #box2 ul {width:1200px; height:120px;float:left;}
+ #box2 ul li { float:left; display:block;}
+ #btnl{ position:absolute; top:140px; left:0px;}
+ #btnr{ position:absolute; top:140px; left:50px;;}
+ul:hover li:not(:hover){ 
+-webkit-filter: blur(2px) grayscale(1);
+-moz-filter: blur(2px) grayscale(1);
+-o-filter: blur(2px) grayscale(1);
+-ms-filter: blur(2px) grayscale(1);
+filter: blur(2px) grayscale(1);
+opacity: .5; /* fallback */ 
+}
+</style>
+
+<body>
+<div id="box1">
+	
+	<div id="box2">
+    
+    <ul id="ul1">
+  		<li><img src="1.jpg" width="200" /></li>
+        <li><img src="2.jpg" width="200" /></li>
+        <li><img src="3.jpg" width="200" /></li>
+        <li><img src="4.jpg" width="200" /></li>
+        <li><img src="5.jpg" width="200" /></li>
+        <li><img src="6.jpg" width="200" /></li>          
+    </ul>
+    <ul id="ul2">
+  		<li><img src="1.jpg" width="200" /></li>
+        <li><img src="2.jpg" width="200" /></li>
+        <li><img src="3.jpg" width="200" /></li>
+        <li><img src="4.jpg" width="200" /></li>
+        <li><img src="5.jpg" width="200" /></li>
+        <li><img src="6.jpg" width="200" /></li>          
+    </ul>    
+    </div>
+    
+</div>
+	<input id="btnl"  type="button" value="<<left" onclick="left()">
+    <input id="btnr"  type="button" value="right>>" onclick="right()">
+</body>
+<script>
+var box1 = document.getElementById("box1");
+var box2 = document.getElementById("box2");
+var timer;
+
+function left(){
+clearInterval(timer);
+var time = flag = i =0;
+var ul_width = 1200;
+
+function play() {
+	if (i>=ul_width){i = 0}
+	box1.scrollLeft = i;
+	i++;
+}
+timer = setInterval(play,10);
+}
+
+
+function right(){
+clearInterval(timer);
+var  i =1200;
+var ul_width = 1200;
+
+function play() {
+	if (i<=0){i = ul_width }
+	box1.scrollLeft = i;
+	i--;
+}
+timer = setInterval(play,10);
+}
+
+
+
+</script>
+
+</html>

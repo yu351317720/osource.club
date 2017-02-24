@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript" src="../js/jq1.9.min.js"></script>
+</head>
+<style>
+body {
+	font-family: "微软雅黑", "黑体", "宋体"
+}
+ul, li, body, h1, h2, h3, h4, h5, h6, img, p {
+	margin: 0px;
+	padding: 0px;
+}
+#Map area {
+	outline: none;
+}
+ul {
+	list-style: none
+}
+.w892 {
+	margin: 0 auto;
+	width: 892px;
+}
+a {
+	text-decoration: none;
+}
+
+.a_colorRed{ color:#F00}
+
+/*---------------------------------------------------------------------------*/	
+	
+header {
+	background: url(img/bg-top.png) repeat-x;
+	height: 190px;
+	position:relative;
+}
+
+#nav li {
+	display: inline-block;
+	float: left;
+	width: 120px;
+	line-height: 40px;
+	text-align: center;
+	background: no-repeat url(img/navline.jpg);
+}
+#nav li:first-child {
+	width: 50px;
+	line-height: 40px;
+}
+#nav li h4 a {
+	color: #e6af57;
+}
+.sub {
+	display:none;
+	width: 120px;
+	line-height: 40px;
+	text-align: center;
+	background-color: #FC9;	
+}
+.sub a {
+	display: block;
+}
+.sub a:hover{ background-color:#930; color:#F90;}
+
+
+/*幻灯片css*/
+#turnImg{ 
+position:absolute;
+top:190px;
+height:397px;
+width:100%;
+background:url(img/bg_mid.jpg) repeat-x;
+z-index:-100;
+}
+#box{
+	margin-top:20px;	
+	height:375px;
+	overflow:hidden;
+	z-index:-100}
+#img {
+	height:355px;
+	width:872px;
+	border:solid #593109 10px;
+	filter: alpha(opacity=100); /*IE滤镜，透明度50%*/
+	-moz-opacity:1; /*Firefox私有，透明度50%*/
+	opacity: 1;/*其他，透明度50%*/
+}
+</style>
+<body onload="bofang()">
+<header>
+  <div id="logo" class="w892"><img src="img/logo-top.jpg" width="892" height="147" usemap="#Map" border="0"/>
+    <map name="Map" id="Map">
+      <area shape="rect" coords="354,5,537,146" href="http://www.baidu.com" alt="logo" target="_blank"/>
+    </map>
+  </div>
+  <nav>
+    <ul class="w892" id="nav">
+      <li>
+        <h4><a href="index.html">首页</a></h4>
+      </li>
+      <li>
+        <h4><a href="">关于我们</a></h4>
+        <div class="sub"> <a href="">二级菜单1</a> <a href="">二级菜单2</a> <a href="">二级菜单3</a> <a href="">二级菜单1</a> <a href="">二级菜单2</a> <a href="">二级菜单3</a> </div>
+      </li>
+      <li>
+        <h4><a href="">关于我们</a></h4>
+        <div class="sub"> <a href="">二级菜单1</a> <a href="">二级菜单2</a> <a href="">二级菜单3</a> </div>
+      </li>
+      <li>
+        <h4><a href="">关于我们</a></h4>
+        <div class="sub"> <a href="">二级菜单1</a> <a href="">二级菜单2</a> <a href="">二级菜单3</a> </div>
+      </li>
+      <li>
+        <h4><a href="">关于我们</a></h4>
+        <div class="sub"> <a href="">二级菜单1</a> <a href="">二级菜单2</a> <a href="">二级菜单3</a> </div>
+      </li>
+      <li>
+        <h4><a href="">关于我们</a></h4>
+        <div class="sub"> <a href="">二级菜单1</a> <a href="">二级菜单2</a> <a href="">二级菜单3</a> </div>
+      </li>
+      <li>
+        <h4><a href="">关于我们</a></h4>
+        <div class="sub"> <a href="">二级菜单1</a> <a href="">二级菜单2</a> <a href="">二级菜单3</a> </div>
+      </li>
+      <li>
+        <h4><a href="">关于我们</a></h4>
+        <div class="sub"> <a href="">二级菜单1</a> <a href="">二级菜单2</a> <a href="">二级菜单3</a> </div>
+      </li>
+      
+      
+    </ul>
+  </nav>  
+</header>
+
+<div id="turnImg">
+<div id="box" class="w892" ><!--幻灯片--->
+    <img  id="img" class="w892" src="img/1.jpg" alt="banner" id="img"  onmouseover="tingzhi()" onmouseout="bofang()"/>	
+    </div>
+</div>
+<script>
+$(document).ready(function(e) {
+    $("#nav li").hover(
+		function(){
+			/*$(this).children("div").css('display','block').siblings("h4").children("a").css("color","red");*/		
+			$(this).children("div").stop(true,true).slideDown().siblings("h4").children("a").css("color","red");
+			},		
+		function(){
+			$(this).children("div").stop(true,true).slideUp().siblings("h4").children("a").css("color","#e6af57");
+			}
+		
+	)
+});
+</script>
+
+
+<script>//幻灯片的js代码
+var banner = new Array();
+	banner[0] = 'img/1.jpg';
+	banner[1] = 'img/2.jpg';
+	banner[2] = 'img/3.jpg';
+	banner[3] = 'img/4.jpg';
+	
+
+for(i=0;i<banner.length;i++){
+	var imgObj = new Image();		
+	imgObj.src =banner[i];
+	
+}
+
+var k = 0;
+
+//自动播放的方法
+function play(){
+	if(k>banner.length-2){k=-1}
+	k +=1;
+	document.getElementById('img').src =banner[k];						
+}
+	
+//播放的方法
+function bofang(){
+ timer = setInterval(play,2000);
+}
+	
+	
+//停止的方法
+function tingzhi(){
+clearInterval(timer);
+}
+</script>
+</body>
+</html>

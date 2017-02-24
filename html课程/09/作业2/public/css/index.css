@@ -1,0 +1,57 @@
+/* CSS Document */
+.all{ width:1006px;}
+.nav{ border:1px solid #e8e8e8; width:1006px;}
+
+	.nav div{ width:1000px; margin:3px; position:relative;}	
+	.nav span{ text-height:30px; font-family: "宋体" ; color:#999;  display:inline-block;}
+	.nav  a span { color:#000; margin-left:15px;}
+	.nav a span:hover{ color:#F00;}
+	.span_right1{ float:right; border:#999 solid 1px; position:relative; right:90px;}
+	.span_right2{ float:right; width:90px; position:relative; right:-90px; }
+
+
+
+
+.header{ position:absolute; top:100px; height:43px; }
+	.header div { height:36px; padding:0px; background-color:#ECECEC;}	
+		.header div span{ display:inline-block; color:#F60; float:left; height:30px; width:80px; padding-top:10px;text-align:center; top:10px; background-color:#FFF;}
+		.header div ul { float:left; list-style-type:none;}
+		.header div ul li { float:left;height:36px; list-style-type:none; display:inline-block; margin-left:20px;position:relative;top:6px; }
+		.header div form { float:left;height:36px; margin-left:30px;position:relative;top:6px;}
+		.price{ width:5em;}
+		.header div p {float:left;height:36px; margin-left:50px;position:relative;top:6px;}
+		
+		.header div img { float:right;height:36px;}
+		
+
+
+
+
+
+
+
+.content{position:absolute;top:140px;  display:block;}
+
+.guess_like_title{	border-bottom:#CCC solid 1px; }
+	
+.guess_like_title p{ font-size:22px;width:222px;padding-bottom:16px;cursor:default;color:#202020;display:block;float:left;}
+	
+.guess_like_title span{ display:inline-block; float:right; top:10px;}
+
+.guess_like_content{ width:1250px;padding-top:20px; position:absolute; top:33px; left:0px;}
+
+.kecheng_child{ width:235px;float:left; margin:3px;  position:relative; }
+
+.kecheng_child  img{ width:235px; }
+
+.kecheng_child  p{ bottom:24px;  position:relative;}
+
+.kecheng_child  p a:hover{ text-decoration:underline; color:#F00;}
+
+.kecheng_child  div  p{ color:#5fb41b; bottom:20px; left:20px; position:relative;display:inline-block;}
+
+.kecheng_child  div  span a{ float:right; color:#999; bottom:20px; right:0px; position:relative;}
+
+.kecheng_child  div  span a:hover{ color:#09F; }
+
+.font_white{ color:#FFF; background-color:#666;}

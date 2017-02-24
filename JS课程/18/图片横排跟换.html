@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+<style>
+#box { position:absolute; margin:0 auto; width:600px; height:330px; background-color:#F00;}
+#img { width:600px;}
+#aaa { position:absolute; top:150px; left:30px;}
+#bbb { position:absolute; top:150px; left:520px;}
+
+#ul{ display:block; height:50px;  padding:0; list-style:none; border:solid #000 1px; border-radius:10px; position:absolute; top:340px; left:100px;}
+</style>
+<body onload="init()">
+<div id="box">
+<img  src="1.jpg" alt="banner" id="img"  onmouseover="tingzhi()" onmouseout="bofang()"/>
+<input id="aaa" type="button" onclick="next(1)" value="<" />
+<input id="bbb" type="button" onclick="next(0)" value=">" />
+<ul id="ul"></ul>
+</div>
+<script>
+
+var banner = new Array();
+	banner[0] = '1.jpg';
+	banner[1] = '2.jpg';
+	banner[2] = '3.jpg';
+	banner[3] = '4.jpg';
+	banner[4] = '5.jpg';
+	banner[5] = '6.jpg';
+	
+	
+	//此处添加图片	
+
+for(i=0;i<banner.length;i++){
+	var imgObj = new Image();		
+	imgObj.src =banner[i];
+} //缓存网络图片的作用
+
+function init(){
+	bofang();
+	createLi();	
+}
+
+
+function  createLi() {
+	
+		var ul=document.getElementsByTagName('ul')[0];
+		for(i=0;i<banner.length;i++){		
+		var newLi = document.createElement('li');
+		ul.appendChild(newLi);
+		newLi.innerHTML= '<img src="'+banner[i]+'" />';
+		newLi.id='li_'+i;
+		newLi.style.backgroundColor='green';
+		newLi.firstChild.style.float = 'left';
+		newLi.firstChild.style.width = '50px';
+		newLi.firstChild.style.height = '50px';
+		newLi.firstChild.style.marginLeft = '10px';
+		newLi.firstChild.style.borderRadius ='10px';
+		newLi.firstChild.style.textAlign ='center';
+		//元素定义完成		
+		var lis=ul.children;				
+		lis[i].onmousemove=function () {	
+				clearInterval(timer);
+				this.style.backgroundColor='white';
+				var lid=this.id;				
+				var h=lid.split("li_");
+				var num=parseInt(h[1]);
+				this.firstChild.style.boxShadow='0px 0px  10px #000';
+				document.getElementById('img').src =banner[num];
+				
+		}//这里只能用onmousemove   如果用onmouseover第一次移动到li上不会促发方法//
+		lis[i].onmouseout=function  ()  {
+				bofang();
+				this.firstChild.style.boxShadow='none';
+				}
+		}	
+		ul.style.width =i*(parseInt(newLi.firstChild.style.width)+parseInt(newLi.firstChild.style.marginLeft))+parseInt(newLi.firstChild.style.marginLeft)+'px';		
+	
+
+		
+}
+
+
+
+	var k = 0;
+	//自动播放的方法
+	function play(){
+		if(k>banner.length-2){k=-1}
+		k +=1;
+		document.getElementById('img').src =banner[k];
+	}
+		
+	//左右翻页的方法
+	function next(arr){
+		if(arr == 1){
+			if(k<1){k=banner.length}			
+			clearInterval(timer);
+			k -=1;
+			document.getElementById('img').src =banner[k];
+									
+		}else if(arr == 0){	
+			if(k>banner.length-2){k=-1}		
+			clearInterval(timer);
+			k +=1;
+			document.getElementById('img').src =banner[k];								
+		}   		
+	}
+	
+	//播放的方法
+	function bofang(){		
+	 timer = setInterval(play,3000);
+	}
+	
+	
+	//停止的方法
+	function tingzhi(){
+	clearInterval(timer);
+	}
+</script>
+
+</body>
+</html>

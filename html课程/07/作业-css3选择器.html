@@ -1,0 +1,63 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=no"/>
+<title>无标题文档</title>
+</head>
+<style type="text/css">
+#p1{ color:#0F6;}
+.p { color:rgb(51,0,204);}
+[id=p1]{ font-size:3em;}
+[id^=p] { outline:dotted #33FF00 3px;} /* id属性以p字母开头的元素被赋予outline样式*/
+[title$=\-d] { background-color:#C96;}/*title属性里以-d结尾的元素背景色为c96*/
+[title*=abc] { border:#000 solid 3px;}/*title属性里包含abc字母的被加上一个border*/
+
+a:hover { font-size:36px;}   /*鼠标移动到超链上显示36px字体*/
+p:nth-child(5){ font-family:"Times New Roman", Times, serif; color:#F00;}
+/*p标签的第五个显示罗马字体，并且颜色为红色*/
+p:last-child:target{ background-color:#F36;}/*  最后一个p标签的链接目标背景色显示为#F36*/
+
+:empty {outline:#000 dashed 2px; }/*空元素的有outline属性*/
+input:focus { background-color:#FFC;}  /*获取焦点的input显示FFC*/
+[type=email]:hover { border-bottom-color:#30F;} /*鼠标移动上去底边显示30F*/
+#sc:disable{ background-color:#ccc;}
+
+h5:nth-child(even){ background-color:#0F6;}
+
+</style>
+
+
+<body>
+<div title="abc-d">
+<marquee direction="right";>
+<p id="p1">id选择器11111111111111111111</p>
+</marquee>
+<p class="p" >ppppppppppppppppp222222222222222222222</p>
+<p class="p">pppppppppppppppppppp333333333333333333</p>
+<p ><a href="#">点击</a>444444444444444444444444444</p>
+<p><a href="#">点击</a>555555555555555555</p>
+<p><a href="#">点击</a>666666666666666666</p>
+<p><a href="#p1">点击</a>777777777777777777</p>
+
+-----------------------------------------------------------------------------------------------
+<h5>11111111111111</h5>
+<p>ppppppppppp</p>
+<p>ppppppppppp</p>
+<div style=" width:100px; height:50px;"></div>
+<h5>22222222222222</h5>
+<h5>33333333333333</h5>
+<h5>44444444444444</h5>
+<input type="tel" id="dianhua" name="dianhua" pattern="^1[0-9]{10}" value=""/>
+<br/>
+<br/>
+<input type="email" id="email" name="email"  value=""/>
+<br/>
+<br/>
+<input type="search" id="sc" name="sc"  disabled/>
+
+
+
+</div>
+</body>
+</html>

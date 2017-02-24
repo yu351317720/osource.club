@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>创建一个Canvas的小实例</title>
+        <style>
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+            #canvas{
+                border: dashed solid #321234;
+                background: black;
+            }
+        </style>
+    </head>
+
+    <body>       
+        <canvas id="canvas" width="1920" height="800">
+            如果这段文字出现，那就说明你的浏览器不支持Canvas哟！
+        </canvas>
+        <script>
+			start();
+            setInterval(start,4000);
+			function start(){
+                var canvas = document.getElementById("canvas");
+                canvas.width=1920;
+                canvas.height=800;
+                var context = canvas.getContext("2d");
+
+                //画一片星空开始吧
+                for(var i=0 ;i<200;i++){
+                    var R = Math.random()*10+3; //
+                    var x = Math.random()*canvas.width;
+                    var y = Math.random()*canvas.height;
+                    var r = Math.random()*360;
+                    drawStar(context,R/2,R,x,y,r);
+                }
+            }
+            /**
+             * 画一个五角星的封装的函数
+             * @param {Object} cxt  提供绘图的上下文的环境
+             * @param {Object} r    充当绘图时小圆的半径的值
+             * @param {Object} R    充当绘图时大圆的半径的值
+             * @param {Object} x    绘图时x轴方向上的偏移量
+             * @param {Object} y    绘图时y轴方向上的偏移量
+             * @param {Object} rota 绘图时图形旋转的角度,表示顺时针的旋转方向！
+             */
+            function drawStar(cxt, r,R ,x,y,rota){
+                cxt.beginPath();
+                //使用循环的方式确定点的位置
+                for(var i =0 ;i<5 ;i++){
+                    //外层大圆上的五个点的位置
+                    cxt.lineTo(Math.cos((18+i*72-rota)/180*Math.PI)*R+x
+                    ,-Math.sin((18+i*72-rota)/180*Math.PI)*R+y);
+                    //内层小圆上点的位置
+                    cxt.lineTo(Math.cos((54+i*72-rota)/180*Math.PI)*r+x
+                    ,-Math.sin((54+i*72-rota)/180*Math.PI)*r+y);
+                }
+                cxt.closePath();
+
+                //设置一些状态
+                cxt.fillStyle="#bf1";
+                cxt.strokeStyle="#fd5";
+                cxt.lineWidth=3;
+                cxt.lineJoin="round";
+                cxt.fill();
+                cxt.stroke();
+            }
+        </script>
+    </body>
+
+</html>

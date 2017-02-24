@@ -1,0 +1,38 @@
+*{
+	 margin:0; 
+	 padding:0;
+	}
+	
+	
+.clearfloat{
+	clear:both;
+	}
+	
+	
+	
+#banner{ background-color:#09F; width:100%; height:60px; position:absolute;}
+
+/*   logo图片   */
+#banner img { width:160px; height:60px;}
+
+/*   导航   */
+#bn_ul ul{ position:absolute; left:170px; top:20px; list-style:none;}
+#bn_ul ul li{ float:left; padding-left:30px;}
+#bn_ul ul li a{ text-decoration:none; color:#F00;}
+#bn_ul ul li a:hover{ color:#3CF; font-size:18px;}
+#bn_ul ul span{ float:left; color:#F00; padding-left:30px; color:#FFF;}
+
+/*   登陆部分   */
+#bn_login { position:absolute; right:30px; top:0px; }
+#bn_login a{ margin-left:20px; margin-top:20px; float:left;}
+
+/*   分享广告   */
+#aside div { width:1em; height:5em; border:#F00 solid 1px; position:fixed; top:200px; right:0px; background-color:#66F;}
+
+ 
+/*   底部   */
+#footer div{ width:100%; height:30px; background-color:#09F; margin:20px; position:absolute; bottom:0px; text-align:center; border:#F00 double 3px;}
+#footer div ul {list-style:none; margin-left:200px;}
+#footer div ul li{ float:left; margin-left:50px; }
+#footer div ul span{ float:left; padding-left:50px; text-height:30px;}
+#footer div ul li a{ text-decoration:none; color:#F00; }

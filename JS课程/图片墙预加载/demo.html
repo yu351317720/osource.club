@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!--声明当前页面的编码格式 国际编码 UTF-8 中文编码 GBK-->
+    <meta charset="UTF-8">
+    <!--声明当前页面的三要素-->
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>please enter your title</title>
+    <!--样式css 修饰 衣服 化妆品-->
+<style type="text/css">
+*{margin:0px;padding:0px;}
+#box{
+	width:1000px;
+	height:500px;
+	margin:auto;
+}
+
+#box ul li{
+	list-style:none;
+	width:225px;
+	background:#fff;
+	float:left;
+	padding:5px;
+	margin:5px;
+	box-shadow:0 0 5px #333;
+}
+#box ul li img{
+	width:225px;
+	transition:1s;/*过渡*/
+}
+</style>
+</head>
+<body>
+	<div id="box">
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+</body>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+var arr = [
+	{src : "images/1.png"},
+	{src : "images/2.jpg"},
+	{src : "images/3.jpg"},
+	{src : "images/4.jpg"},
+	{src : "images/5.jpg"},
+	{src : "images/6.jpg"},
+	{src : "images/7.jpg"},
+	{src : "images/8.jpg"},
+	{src : "images/9.jpg"},
+	{src : "images/10.jpg"},
+	{src : "images/11.jpg"},
+	{src : "images/12.jpg"}
+];//数组  数组[下标]得到数组的数字   对象.属性得到属性值
+var i = 0;//初始化一个变量
+function create(){//封装一个函数来创建
+	var oDiv = document.createElement("div"),//创建一个DIV盒子
+	oImg = new Image();//新建一个图片对象
+	//  %模  取余数
+	oImg.src = arr[i%arr.length].src;//获取数组里面的图片路径
+	oImg.style.cssText = "opacity:0;transform:scale(0);";//图片初始样式
+	oDiv.appendChild(oImg);//把图片标签放到Div里面去
+	getList($("#box ul li")).append(oDiv);//把DIV添加到最短的li当中去
+	(function(oImg){
+		setTimeout(function(){
+			oImg.style.cssText = "opacity:1;transform:scale(1);";
+		},100)//倒序定时器
+		console.log("11");
+	})(oImg);//立即执行
+}
+
+function getList(obj){//f(x)=x+1  x形式参数  实参
+	var length = obj.length,//定义一个变量保存li的列数
+	h = Infinity,//每一列的高度都可以无限高
+	oLi;//定义一个变量来保存符合条件的li并返回出去
+		
+	for (var i=0;i<length ;i++ )
+	{
+		if (obj.eq(i).height()<h)
+		{
+			h = obj.eq(i).height();
+			oLi = obj.eq(i);//eq jq方法  找到对应第参数个对象
+			//  7  5 10 8
+		}
+	}
+	return oLi;
+}
+
+var sum;
+function upload(){
+	i++;
+	if (i<12)
+	{
+		for (;i<12 ;i++ )
+		{
+			create();//先执行12次create方法
+		}
+	}else{
+		sum = i;
+		for (;i<sum+1 ;i++ )
+		{
+			create();
+		}
+	}
+}
+upload();
+
+var scrollH = "";//文档高度
+var srollT = "";//滚动条的高度
+$(function(){
+	var _height = $(window).height();//获取到可视区域的高度
+	$(window).scroll(function(){
+		scrollH = document.body.scrollHeight;//文档高度
+		srollT = document.body.scrollTop;//滚动条高度
+		if (_height+srollT+50 > scrollH)
+		{
+			 upload();
+		}
+	});//滚动条拖动事件
+});
+</script>
+</html>

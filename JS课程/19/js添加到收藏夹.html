@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+<a href="http://chenyu-gege.gicp.net/" onclick="return addfavorite(this,'http://chenyu-gege.gicp.net/','测试收藏页');">收藏一下</a>
+
+<script type="text/javascript">
+ function addfavorite(obj,url,title) { 
+  !url ? url = location.href : null;
+  !title ? title = document.title : null;
+  try{   
+   window.external.addFavorite(url, title); 
+   return false;
+  }catch(e){   
+   try{   
+    window.sidebar.addPanel(title, url, ""); 
+    return false;  
+   }catch(e){   
+    alert("加入收藏失败，请使用Ctrl+D进行添加"); 
+    if(location.href.toLowerCase().indexOf(obj.href.toLowerCase(),0)>=0){return false;} 
+   }   
+  }   
+ }
+</script>
+
+</body>
+</html>
+
+

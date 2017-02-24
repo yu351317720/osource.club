@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+
+</body>
+<script>
+var a =1 ;
+function a(){
+	document.writeln(a)
+	var a = 3;	
+}
+a();
+
+//上面申明并不能生效;var申明变量是系统会自动将变量置于上方;
+
+//等同于
+var a  = 1;
+function a (){
+	var a ;
+	document.writeln(a);
+	a = 3;
+}
+a();
+
+
+</script>
+</html>

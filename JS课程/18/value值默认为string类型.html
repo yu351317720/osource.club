@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+<script src="../14/jq1.9.min.js"></script>
+<body>
+
+<input id="int" value="1" type="text" style="outline:#0F9" />
+
+<script>
+
+				var Int=document.getElementById('int').value;
+				//alert(typeof(Int));
+				
+				switch(parseInt(Int)){
+					
+					case 1 : $('#int').val('这个value值为1');break;					
+					case 2 : $('#int').css('background-color','#abcadf');break;
+					}
+
+</script>
+ </body>
+</html>

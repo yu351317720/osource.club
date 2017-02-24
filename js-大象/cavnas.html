@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+<style type="text/css">
+	canvas { border: #2E858A 1px solid;}
+</style>
+<body>
+<canvas id="mycanvas" height="600" width="800">你的浏览器不支持canvas
+</canvas>
+</body>
+
+<script>
+	var canvas = document.getElementById("mycanvas");
+	var c=canvas.getContext('2d');
+	var color = c.createLinearGradient(0,0,0,200);//这个要和下面画布比例符合  如果画布大于200，大出部分以最后一个颜色填充；
+	c.fillStyle = color;
+	color.addColorStop(0,"#ff0000");
+	color.addColorStop(0.2,"#00ff00");
+	color.addColorStop(0.8,"#0000ff");
+	color.addColorStop(1,"#022f4f");
+	c.fillRect(0,0,200,200);
+</script>
+</html>

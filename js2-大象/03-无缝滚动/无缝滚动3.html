@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html ><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<style>
+ ul , li { margin:0; padding:0; list-style:none;}
+ #box1{  border:#F66 solid 1px;width:1200px; height:120px; position:relative;overflow:hidden; }
+ #box2 { width:2400px;}
+ #box2 ul {width:1200px; height:120px;float:left;}
+ #box2 ul li { float:left; display:block;}
+ #l{ position:absolute; top:8px; left:8px; width:600px; height:120px; }
+ #r{ position:absolute; top:8px; left:608px;width:600px; height:120px;}
+</style>
+
+<body>
+<div id="box1">	
+	<div id="box2">    
+    <ul id="ul1">
+  		<li><img src="1.jpg" width="200" /></li>
+        <li><img src="2.jpg" width="200" /></li>
+        <li><img src="3.jpg" width="200" /></li>
+        <li><img src="4.jpg" width="200" /></li>
+        <li><img src="5.jpg" width="200" /></li>
+        <li><img src="6.jpg" width="200" /></li>          
+    </ul>
+    <ul id="ul2">
+  		<li><img src="1.jpg" width="200" /></li>
+        <li><img src="2.jpg" width="200" /></li>
+        <li><img src="3.jpg" width="200" /></li>
+        <li><img src="4.jpg" width="200" /></li>
+        <li><img src="5.jpg" width="200" /></li>
+        <li><img src="6.jpg" width="200" /></li>          
+    </ul>    
+    </div>    
+</div>
+	<div id="l" onmouseover="turn(this.id)"></div>
+    <div id="r" onmouseover="turn(this.id)"></div>    
+</body>
+<script>
+var box1 = document.getElementById("box1");
+var timer = i =0;
+var ul_width = 1200;
+function turn(direction){
+	clearInterval(timer);		
+	if (direction =="l"){			
+		function play() {
+			i>=ul_width?i = 0:null;
+			box1.scrollLeft = i;
+			i++;
+		}
+			
+	}else if(direction =="r"){		
+		function play() {
+			i<=0?i = ul_width:null;
+			box1.scrollLeft = i;
+			i--;
+		}		
+	}
+	timer = setInterval(play,10);
+}
+
+</script>
+
+</html>

@@ -1,0 +1,129 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta http-equiv=Content-Type  content="text/html; charset=gb2312" >
+<title>员工指导说明</title>
+<style type="text/css">
+#left-nav{ background-color:#C4C4C4; color:#FFF;  display:block; width:19%; top:0; left:0px; }
+
+#daohang{ background:#CCC;}
+ol { padding:20px;}
+li{ padding:3px;}
+
+#contents {float:right; right:0;top:0; width:80%; height:99%; position:absolute;}
+</style>
+<script>
+window.onload=function  () {
+	
+    var vcolor = document.getElementById("myColor").value;
+	//alert(vcolor);
+	var vapply = document.getElementById("apply");
+	vapply.onclick=function(){
+    document.getElementById("left-nav").style.backgroundColor = vcolor;
+	}
+}
+</script>
+
+</head>
+
+
+<body  id="body" >
+<div  id="left-nav" >
+<p>选择主题颜色：<input type="color" id="myColor" value="#C8C1F0"; />
+<button id="apply">应用</button>
+</p>
+
+
+  <h1>阿里产品</h1>
+<form>
+  <select onselect="changenav(this.value)"> 
+  <option value="clould-pc">云主机</option>
+  <option value=" clould-disk">云硬盘</option>
+  <option value="clould-database">云数据库</option>
+  <option value="domian-name">域名注册</option>
+  </select>
+</form>
+
+<nav id="daohang" class="col"> 
+ <!-----------云主机--------------->  
+     <div id="clould-pc">
+         <ol type="I" >
+            <li><a href="contents.html#1">基本信息</a>
+                <ul>
+                    <li ><a href="contents.html#1_1">简介</a></li>
+                    <li ><a href="contents.html#1_2">对象</a></li>
+                        <ol type="1">
+                             <li><a href="contents.html#2-2-1">主机服务性价比</a></li>
+                             <li><a href="contents.html#2-2-2">稳定性</a></li>
+                             <li><a href="contents.html#2-2-3">快速分布式部署</a></li>
+                             <li><a href="contents.html#2-2-3">业务的弹性能力</a></li>
+                             <li><a href="contents.html#2-2-3">高可用/快速恢复</a></li>
+                             <li><a href="contents.html#2-2-3">希望轻松管理</a></li>
+                        </ol>   
+                    </li>
+                </ul>
+            </li>
+            <li><a href="contents.html#2">产品特征</a></li>
+            <li><a href="contents.html#3">云主机优势</a> </li>
+            <li><a href="contents.html#4">产品用途</a> </li>
+            <li><a href="contents.html#5">产品特点</a></li>
+            <li><a href="contents.html#6">需求背景</a></li>
+            <li><a href="contents.html#7">相关对比</a></li>
+            <li><a href="contents.html#8">如何评价云主机质量</a></li>
+            <li><a href="contents.html#9">挑选注意</a></li>
+      </ol>
+      </div>
+ 
+  
+<!--------------云硬盘----------------->  
+ <div id="clould-disk" style="display:none";>
+  <ol ><li>第二个菜单</li></ol>
+  </div>
+ <div id="procedure">
+  <ol  ></ol>
+  </div>
+ <div id="company">
+  <ol  ></ol>
+  </div>
+  
+<!--------------云数据库----------------->  
+ 
+  <div id="clould-database" style="display:none";>
+  <ol ><li>第三个菜单</li></ol>
+  </div>
+ <div id="procedure">
+  <ol  ></ol>
+  </div>
+ <div id="company">
+  <ol  ></ol>
+  </div>
+  
+<!--------------云数据库----------------->  
+ 
+  <div id="domian-name" style="display:none";>
+  <ol ><li>第四个菜单</li></ol>
+  </div>
+ <div id="procedure">
+  <ol  ></ol>
+  </div>
+ <div id="company">
+  <ol  ></ol>
+  </div>
+  
+
+ 
+</nav>
+
+</div>
+
+<!------right-iframe-------------->
+
+<div id="contents" >
+<iframe src="contents.html" style=" width:100%; height:100%;"   >
+</iframe>
+</div>
+
+  
+
+
+</body>
+</html>

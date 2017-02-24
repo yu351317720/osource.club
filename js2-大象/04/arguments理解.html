@@ -1,0 +1,14 @@
+<script>
+ function f(a, b, c){
+ 2     alert(arguments.length);   // result: "2"
+ 3     a = 100;
+ 4     alert(arguments[0]);       // result: "100"
+ 5     arguments[0] = "qqyumidi";
+ 6     alert(a);                  // result: "qqyumidi"
+ 7     alert(c);                  // result: "undefined"
+ 8     c = 2012;
+ 9     alert(arguments[2]);       // result: "undefined"
+10 }
+11 
+12 f(1, 2);
+</script>

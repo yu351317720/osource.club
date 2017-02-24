@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+
+
+<body>
+<p></p>
+<script type="text/javascript">
+	function drink(date,weight,energy,address){
+		this.date = date;
+		this.weight = weight;
+		this.energy = energy;
+		this.address = address;
+		this.unpack = function (){
+			alert('直接拧瓶盖');	
+		}
+	}
+	
+		drink.prototype.cook = function(){
+			alert('加热');
+		}
+		drink.prototype.store = function(){
+			alert('冷藏');
+		}
+		drink.prototype.Transfer = function(){
+			alert('不能倒置');
+		}
+		
+	var milk = new drink('180天','500g','2000千焦','中国');
+	milk.store();
+	
+	
+	var  wine =  new drink('180天','500g','2000千焦','中国');
+	wine.Transfer();
+	
+	
+	var conjee = new drink('5天','500g','2000千焦','中国');
+	var vtext = document.getElementsByTagName('p');
+	vtext[0].innerHTML =  conjee.date ;
+</script>
+
+</body>
+</html>

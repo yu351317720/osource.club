@@ -1,0 +1,81 @@
+<!DOCTYPE html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<style>
+ul,li { margin:0; padding:0; list-style:none;}
+ul { width:210px; text-align:center;}
+ul li { float:left; width:210px; height:140px}
+ul li  img { width:100%; height:100%;}
+</style>
+<body>
+<ul id="ul1">
+	<li><img src="1.jpg" data-src="0.jpg"  data-show="0" alt="空"></li>
+    <li><img src="1.jpg" data-src="0.jpg"  data-show="0"  alt="空"></li>
+    <li><img src="1.jpg" data-src="0.jpg"  data-show="0"  alt="空"></li>
+    <li><img src="1.jpg" data-src="0.jpg"  data-show="0"  alt="空"></li>
+    <li><img src="1.jpg" data-src="0.jpg"  data-show="0"  alt="空"></li>
+    <li><img src="1.jpg" data-src="0.jpg"  data-show="0"  alt="空"></li>
+    <li><img src="1.jpg" data-src="0.jpg"  data-show="0"  alt="空"></li>
+    <li><img src="1.jpg" data-src="0.jpg"  data-show="0"  alt="空"></li>
+    <li><img src="1.jpg" data-src="0.jpg"  data-show="0"  alt="空"></li>
+    <li><img src="1.jpg" data-src="0.jpg"  data-show="0"  alt="空"></li>
+    <li><img src="1.jpg" data-src="0.jpg"  data-show="0"  alt="空"></li>
+    <li><img src="1.jpg" data-src="0.jpg"  data-show="0"  alt="空"></li>
+    <li><img src="1.jpg" data-src="0.jpg"  data-show="0"  alt="空"></li>
+    <li><img src="1.jpg" data-src="0.jpg"  data-show="0"  alt="空"></li>
+    <li><img src="1.jpg" data-src="0.jpg"  data-show="0"  alt="空"></li>
+    <li><img src="1.jpg" data-src="0.jpg"  data-show="0"  alt="空"></li>
+    <li><img src="1.jpg" data-src="0.jpg"  data-show="0"  alt="空"></li>  
+    <li><img src="1.jpg" data-src="0.jpg"  data-show="0" alt="空"></li>
+    <li><img src="1.jpg" data-src="0.jpg"  data-show="0"  alt="空"></li>
+    <li><img src="1.jpg" data-src="0.jpg"  data-show="0"  alt="空"></li>
+    <li><img src="1.jpg" data-src="0.jpg"  data-show="0"  alt="空"></li>
+    <li><img src="1.jpg" data-src="0.jpg"  data-show="0"  alt="空"></li>
+    <li><img src="1.jpg" data-src="0.jpg"  data-show="0"  alt="空"></li>
+    <li><img src="1.jpg" data-src="0.jpg"  data-show="0"  alt="空"></li>
+    <li><img src="1.jpg" data-src="0.jpg"  data-show="0"  alt="空"></li>
+    <li><img src="1.jpg" data-src="0.jpg"  data-show="0"  alt="空"></li>
+    <li><img src="1.jpg" data-src="0.jpg"  data-show="0"  alt="空"></li>
+    <li><img src="1.jpg" data-src="0.jpg"  data-show="0"  alt="空"></li>
+    <li><img src="1.jpg" data-src="0.jpg"  data-show="0"  alt="空"></li>
+    <li><img src="1.jpg" data-src="0.jpg"  data-show="0"  alt="空"></li>
+    <li><img src="1.jpg" data-src="0.jpg"  data-show="0"  alt="空"></li>
+    <li><img src="1.jpg" data-src="0.jpg"  data-show="0"  alt="空"></li>
+    <li><img src="1.jpg" data-src="0.jpg"  data-show="0"  alt="空"></li>
+    <li><img src="1.jpg" data-src="0.jpg"  data-show="0"  alt="空"></li>    
+</ul>
+</body>
+
+ <script>
+ 	
+	window.onscroll = function scrollF(){
+		var ul1 = document.getElementById("ul1");
+		var lis = ul1.getElementsByTagName("li");
+				
+		for(var i= 0; i<lis.length; i++){	
+			if(lis[i].firstChild.dataset.show =="0"){
+				intoView(lis[i].firstChild);
+			}else{
+				console.log("该元素已经加载过了");
+				}
+		}
+	
+	
+	function intoView(obj){
+		var objH = obj.offsetHeight;
+		var objTop = obj.offsetTop;
+		var scrollTop = document.body.scrollTop;		
+		var screenH  = screen.height;
+		console.log(scrollTop);
+		if( (scrollTop + screenH) >= objTop  ){			
+			obj.src = obj.dataset.src;
+			obj.dataset.show = "1";
+			console.log("正在加载");
+		}	
+ 	}	
+}
+ </script>
+
+</html>

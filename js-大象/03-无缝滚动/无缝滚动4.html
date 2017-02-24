@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>滚动效果</title>
+<style>
+* {
+	margin: 0;
+	padding: 0px;
+}
+h1 {
+	position: absolute;
+	color: red;
+	width: 20em;
+	top: 30px;
+	text-align: center;
+}
+#consult {
+	width: 900px;/*图片数量乘以图片宽*/
+	height: 85px;
+	position: absolute;
+	top: 100px;
+	left: 0px;
+	box-sizing: border-box;
+	border: solid #C44144 1px;
+	overflow: hidden;
+}
+#ul {
+	list-style: none;
+	width: 400%;
+	height: 85px;
+	margin: 0 auto;
+	position: absolute;
+	top: 0px;
+	left: -900px;
+}
+#ul li img {
+	float: left;
+	left: 0px;
+	width: 150px;
+	height: 85px;
+	cursor: pointer;
+}
+	
+ul:hover li:not(:hover){ 
+-webkit-filter: blur(2px) grayscale(1);
+-moz-filter: blur(2px) grayscale(1);
+-o-filter: blur(2px) grayscale(1);
+-ms-filter: blur(2px) grayscale(1);
+filter: blur(2px) grayscale(1);
+opacity: .5; /* fallback */ 
+}
+</style>
+</head>
+<body>
+<h1>&lt;-鼠标移动到滚动照片上面改变方向-&gt;</h1>
+<div id="consult" >
+  <ul id="ul">
+    <li><img src="../02-幻灯片/img/1.jpg" /></li>
+    <li><img src="../02-幻灯片/img/2.jpg" /></li>
+    <li><img src="../02-幻灯片/img/3.jpg" /></li>
+    <li><img src="../02-幻灯片/img/4.jpg" /></li>
+    <li><img src="../02-幻灯片/img/5.jpg" /></li>
+    <li><img src="../02-幻灯片/img/6.jpg" /></li>
+  </ul>
+</div>
+</body>
+<script>
+        var i =0;
+        var timer;
+		
+        var box = document.getElementById("consult");
+        var ul = document.getElementById("ul");
+		var h = box.offsetTop;
+		var h2 =h + box.offsetHeight;
+		var w =box.offsetWidth;
+		
+	
+       // var lis = ul.getElementsByTagName("li");
+        	a = ul.innerHTML;
+        	ul.innerHTML += a;
+			ul.innerHTML += a;
+	
+        box.onmousemove = function (){return touch(event)};
+	
+        function touch(event){
+			x=event.clientX;
+			y=event.clientY;
+			if(y>=100&&y<=185&&x<w/2){
+				init("left");
+				
+			}else if(y>=h && y<=h2 && x>450 &&x<900){
+				init("right");
+			}
+
+		}
+			
+		function init(x){
+                if(timer){	clearInterval(timer);timer=null ;}
+					temp = function(){ return autoplay(x)}
+					timer = setInterval(temp,10);
+				
+		}
+        
+        function autoplay(direction){
+                if(direction == "left" ){                        
+                        if(i<= -900){i=0;}
+                        i-=1;
+                        
+						if(i%450==0){ 
+							if(timer){	clearInterval(timer);timer=null ;}		
+							setTimeout(function(){return init("left") },1000);
+						}
+                        
+                }else if(direction == "right"){                        
+                        if(i>=900){i=0;}
+                        i+=1;
+                        
+						if(i%450==0){ 
+							if(timer){	clearInterval(timer);timer=null ;}		
+							setTimeout(function(){return init("right") },1000);
+						}
+                }
+				
+				ul.style.left =i-900 +"px";
+				
+        }
+		
+		
+</script>
+</html>

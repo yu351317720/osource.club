@@ -1,0 +1,8 @@
+/* CSS Document */
+ul,li { margin:0; padding:0; list-style:none;}
+#aside{display:inline-block; float:left;}
+#aside ul { height:100%; display:box;display:-webkit-box;}
+#aside li { width:20%; height:50px; line-height:50px; background-color:#CCC;}
+
+article{ display:inline-block; float:left;}
+

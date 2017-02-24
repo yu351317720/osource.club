@@ -1,0 +1,265 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script src="jq/jquery-1.9.1.min.js" type="text/javascript"></script>
+</head>
+<style>
+	*{
+		margin: 0; padding: 0; list-style: none;
+	}
+	body{
+		width: 100%;
+		height: 1000px;
+	}
+	#nav{
+		width: 100%;
+		height: 40px;
+		background-color: #000;		
+		position: fixed;
+	}
+	.hide{ display: none}
+	#nav ul {
+		color: #999;
+		width: 500px;
+		height: 40px;
+		margin: 0 auto;
+		display: block;		
+	}
+	#nav ul li {
+		float: left;
+		line-height: 40px; 
+		margin-left: 40px;
+		cursor: pointer;
+	}
+	#nav ul li:hover{
+		color: #FFFFFF;
+	}
+	#ul{
+		display: block;
+		position: absolute;
+		width: 100%;
+		top:0px;
+		left: 0px;		
+	}
+	#ul li {
+		display: block;
+		width: 100%;
+		min-height: 360px;
+		float: left;		
+		/*border:  #EC1C1F solid 3px;*/
+		box-shadow: -5px -5px 10px green  inset;
+		box-sizing: border-box;	
+		position:relative;		
+		
+	}
+	#logo{
+		width: 80px; 
+		height: 80px; 
+		border-radius: 50%; 
+		overflow: hidden;
+		position: absolute;
+		top:60px;
+		left: 20px;
+		background:url(0.jpg);
+		background-position: center;
+		background-size: 100%;
+		transition:all 1s linear;
+		
+	}
+	#logo img{
+		display: none;
+	}
+	#logo:hover{ 		
+		transform: rotate(360deg);		
+	}
+	#logo:hover img{
+		display: block;
+	}
+	#intro{
+		background-image:url(mpBG.png);
+		background-size: cover;
+		background-position: center center;
+		width: 500px; 
+		height: 80px; 
+		padding: 70px;		
+		position: absolute; 
+		top: -250px; 
+		left:calc(50% - 265px);		
+		transition:all 1s linear 1s;
+		
+	}
+	#intro div div{
+		transition:all 1s;
+		position: absolute;
+	}
+	#myCanvas{
+		position: absolute;
+		
+	}
+	audio{
+		display: none;
+	}
+</style>
+
+<body >
+	<nav id="nav" class="hide">
+		<ul>
+			<li>首页</li>
+			<li>作品</li>
+			<li>随笔</li>
+			<li>网络</li>
+			<li>关于</li>	
+			<embed wmode="transparent" src="js/clock.swf" quality="high" bgcolor="#ffffff" name="honehoneclock" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" width="200" height="100" align="middle">		
+		</ul>
+	</nav>
+	
+		<ul id="ul">
+			<canvas id="myCanvas"></canvas>
+			<audio src="http://chenyu-gege.gicp.net:12345/mp4/gbqq.mp3" controls autoplay loop>
+				Your browser does not support the audio element.
+			</audio>
+			<!-- base64用于小图比较合适,它会占用渲染资源,降低画质-->
+			<li>
+				<div id="logo" >
+					<img src="pause.png" width="100%"  alt="a" >
+				</div>
+				<div id="intro">
+					<h3>陈宇:</h3>
+					<div id="maxim"></div>
+				</div>
+			</li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	
+
+</body>
+<script>
+	window.onload = function(){	
+		$("#nav").removeClass("hide")
+		var ul = document.getElementById('ul');
+		 lis = ul.getElementsByTagName('li');
+		var logo =document.getElementById('logo');
+		var img = logo.getElementsByTagName('img')[0];
+		var intro =document.getElementById('intro');
+		var music =document.getElementsByTagName('audio')[0];
+		var div = document.getElementById('maxim');
+		var str ="智者创造机会，强者把握机会，弱者坐等机会。";
+		var t = str.length;
+		
+		//修改介绍部分的定位属性值.
+		intro.style.top = "140px";
+		logo.style.left = "50%";
+		
+		
+		//音乐播放暂停
+		logo.onclick=function(){
+			if (music.paused){ 
+				music.play(); 				
+				img.setAttribute("src","pause.png"); 
+			} 
+			else{ 
+				music.pause(); 
+				img.setAttribute("src","play.png"); 
+			} 
+		}
+		//初始化背景色
+		document.getElementsByTagName('body')[0].style.backgroundColor = "#60246B";
+	
+		var cH = document.documentElement.clientHeight;
+		var LisH =parseInt( window.getComputedStyle(lis[0],null).height);
+		for(var i=0;i<lis.length;i++){
+			lis[i].style.height = cH  + 'px';
+			lis[i].style.boxShadow = "-5px -5px 50px  #fff  inset";	
+			//LisH = window.getComputedStyle(lis[i],null).height
+		}
+		
+//		//创建文字wrap元素和样式
+//		for(i=0;i<t;i++){
+//			var divs=document.createElement("div");
+//			div.appendChild(divs);
+//			divs.innerHTML=str[i];
+//			divs.setAttribute("id",i);
+//			divs.style.left=Math.floor(Math.random()*1000)+"px";
+//			divs.style.top= Math.floor(Math.random()*-1000)-240+"px";
+//			divs.style.color = "#000";	
+//			//divs.style.fontSize = Math.floor(Math.random()*10+12)+"px"
+//		}		
+//		setTimeout(fntmp,1000);
+//		//文字动画
+//		function fntmp(){			
+//			for(var i =0; i<t;i++){		
+//				$("#"+i).animate({
+//				left:i*20 +80+ 'px',
+//				top:'100px'
+//				},"slow")
+//			}
+//		}
+		//窗口绑定resize事件
+		window.addEventListener("resize",resize,false)		
+		function  resize() {
+			cH = document.documentElement.clientHeight;
+			for(var i=0;i<lis.length;i++){
+			lis[i].style.height = cH + 'px';
+			lis[i].style.minHeight = "360px";
+			lis[i].style.boxShadow = "-5px -5px 50px  #fff  inset";					
+			}	
+			
+			LisH = parseInt(window.getComputedStyle(lis[0],null).height);	
+			
+		}
+		//随机颜色函数
+		function color(){
+			var r = parseInt( Math.random()*255 );
+			var g = parseInt( Math.random()*255 );
+			var b = parseInt( Math.random()*255 );
+			var a =  Math.random() ;
+			return 'rgba('+r+','+g+','+b+','+a+')'
+		}	
+		
+		var a="",delta,index=0,timer;
+           
+      
+            var beforeScrollTop = document.body.scrollTop; 				
+			window.addEventListener("scroll", function() {
+                var afterScrollTop = document.body.scrollTop,
+                    delta = afterScrollTop - beforeScrollTop;
+                if( delta === 0 ) return false;
+                 if(delta > 0){					
+					if(timer){
+						clearTimeout(timer);
+						timer=null;
+					}
+						timer = setTimeout( dowm,500) 	;				 
+				 } else{
+					 	if(timer){
+							clearTimeout(timer);
+							timer=null;
+						}
+						timer =  setTimeout( up,1000) ;					 
+				 }
+                beforeScrollTop = afterScrollTop;
+            }, false);        
+     
+		function dowm(){	
+			index++;
+			$("#nav").addClass("hide");			
+			$("#ul").stop(true,false).animate({top:-cH*index},"slow");			
+			console.log("top:"+($("#ul").offset().top)+",li高度:"+LisH+",窗口高度:"+cH+',i:'+index)	;
+			
+
+		}
+		function up(){
+			index--;
+			$("#ul").stop(true,false).animate({top:0},"slow");
+			
+			console.log("top:"+($("#ul").offset().top)+",li高度:"+LisH+",窗口高度:"+cH+',i:'+index)
+
+		}
+	}
+</script>
+</html>

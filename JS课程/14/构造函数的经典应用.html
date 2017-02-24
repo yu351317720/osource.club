@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+
+</body>
+<script>
+function fnA(){	
+	this.fn = function(){ //这个this代表谁 搞不明白 为什么？
+		alert(this.a);//对象o调用代表o
+		that = this;//对象o调用代表o
+		setTimeout(fnthat,1000)
+		}
+	}
+function fnthat(){
+	that.fn();
+	}
+var o = new fnA();//新建对象
+o.a = "对象局部变量a";
+o.fn();
+
+</script>
+</html>

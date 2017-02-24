@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>transform-style实现Div的3D旋转</title>
+<meta charset="utf-8">
+<style>
+* {
+	font-size: 24px;
+	color: #00ff00;
+	padding: 0;
+	margin: 0;
+}
+#shichuan {
+	border: #030000 1px solid;
+	position: relative;
+	height: 500px;
+	width: 500px;
+	-webkit-perspective: 500;
+	margin-top: 100px;
+	margin-right: auto;
+	margin-left: auto;
+}
+#cankao {
+	margin-top: 100px;
+	margin-left: 10px;
+	width: 280px;
+	height: 280px;
+	background-color: #666;
+	opacity: 0.3;
+	-webkit-transform-style: preserve-3d;
+	-webkit-animation: spin 20s infinite linear;
+}
+#cankao > div {
+	position: absolute;
+	top: 40px;
+	left: 40px;
+	width: 200px;
+	height: 200px;
+	padding: 10px;
+	-webkit-box-sizing: border-box;
+}
+#cankao > div:first-child {
+	background-color: red;
+	-webkit-transform: rotateY(45deg) translateZ(-150px);
+}   /*先旋转，再z轴平移*/
+#cankao > div:last-child {
+	background-color: yellow;
+	-webkit-transform: translateZ(150px) rotateY(-300deg);
+	-webkit-transform-origin: 50% top;
+}/*先z轴平移,再旋转*/
+	
+/*执行Y轴旋转360度动画*/
+@-webkit-keyframes spin {
+from {
+-webkit-transform: rotateY(0);
+}
+to {
+-webkit-transform: rotateY(360deg);
+}
+}
+</style>
+</head>
+<body>
+<div>让你清晰理解css3的3D结构<a href="http://chenyu-gege.gicp.net:12345/css3-div3D.html" target="_blank">原文</a></div>
+<div id="shichuan">
+  <div id="cankao">
+    <div><a href="/">内容</a></div>
+    <div><a href="http://chenyu-gege.gicp.net:12345/css3-div3D.html">本文章</a></div>
+  </div>
+</div>
+</body>
+</html>

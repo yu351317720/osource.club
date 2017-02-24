@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript" src="jquery-1.6.4.min.js"></script>
+
+<script>
+$(document).ready(function(){
+  $(".dd1").click(function(){	
+    $(this).nextAll("dt").toggle().parent().siblings().children('dt').hide();
+  });
+  
+  $(".dd2").click(function(){	
+    $(this).nextAll("dt").toggle().parent().siblings().children('dt').hide();
+	
+  });
+  
+  $(".dd3").click(function(){	
+    $(this).nextAll("dt").toggle().parent().siblings().children('dt').hide();
+  });
+});
+</script>
+</head>
+<style>
+dl dd{padding:0px; margin:0px;}
+dd{ border:#0F0 solid 1px;}
+dt{ border:#f00 solid 1px; display:none;}
+</style>
+<body>
+<dl>
+    <dd class="dd1">11111</dd>
+    <dt>aaaaa</dt>
+    <dt>bbbbb</dt>
+    <dt>ccccc</dt>
+    <dt>ddddd</dt>
+</dl>
+
+<dl>
+    <dd class="dd2">22222</dd>
+    <dt>aaaaa</dt>
+    <dt>bbbbb</dt>
+    <dt>ccccc</dt>
+    <dt>ddddd</dt>
+</dl>
+
+<dl>
+    <dd class="dd3">333333</dd>
+    <dt>aaaaa</dt>
+    <dt>bbbbb</dt>
+    <dt>ccccc</dt>
+    <dt>ddddd</dt>
+</dl>
+
+
+</body>
+</html>

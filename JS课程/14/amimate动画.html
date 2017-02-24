@@ -1,0 +1,27 @@
+<html>
+<head>
+<script type="text/javascript" src="jq1.9.min.js"></script>
+<script type="text/javascript"> 
+$(document).ready(function(){
+  $("#start").click(function(){
+    $("#box").animate({height:300,width:300,opacity:0.2},2000);
+    $("#box").animate({height:100,opacity:1},2000);
+  });
+  $("#stop").click(function(){
+    $("#box").stop();//这里点击一下只能清除一个动画。上面start有两个动画。
+  });
+});
+</script>
+</head>
+ 
+<body>
+
+<p><button id="start">Start Animation</button><button id="stop">Stop Animation</button></p>
+
+<div id="box" style="background:#98bf21;height:100px;width:100px;position:relative">
+</div>
+ <style>
+ 	a{ position:static}
+ </style>
+</body>
+</html>

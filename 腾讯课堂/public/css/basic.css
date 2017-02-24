@@ -1,0 +1,105 @@
+/* 共用样式 */
+* {
+	margin: 0;
+	padding: 0;
+}
+html {
+	color: #000;
+	font-family:"微软雅黑", "宋体";
+}
+ul {
+	list-style-type: none;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+
+.textbottom {
+	margin-bottom: 0px;
+}
+.wh220_40 {
+	width: 220px;
+	height: 40px;
+}
+.wh980_40 {
+	width: 980px;
+	height: 40px;
+}
+.h60px {
+	height: 60px;
+}
+.mgstl {
+	margin-left: 20px;
+	margin-top: 10px;
+}
+.top {
+	width: 100%;
+	height: 100px;
+}
+.w1200 {
+	width: 1200px;
+}
+.juzhong {
+	margin: 0 auto;
+}
+a:hover {
+	color: #39F;
+	text-decoration: none;
+}
+img {
+	cursor: pointer;
+}
+.dis_inlineblock {
+	display: inline-block
+}
+.dis_block{
+	display:block;
+}
+.link_black {
+	color: #000;
+	text-decoration: none;
+}
+.link_red {
+	color: #F33;
+	text-decoration: none;
+}
+.link_grey {
+	color: #ccc;
+	text-decoration: none;
+}
+.link_white {
+	color: #FFF;
+	text-decoration: none;
+}
+.font_small {
+	font-size: 14px;
+}
+.font_mid {
+	font-size: 16px;
+}
+.font_big {
+	font-size: 24px;
+}
+.float_l {
+	float: left;
+}
+.float_r {
+	float: right;
+}
+.position_a {
+	position: absolute;
+}
+.position_r {
+	position: relative
+}
+.clearfoalt {
+	clear: both;
+}
+
+.border {
+	border: #F00 solid 1px;
+}
+.background {
+	background-color: #99C;
+}

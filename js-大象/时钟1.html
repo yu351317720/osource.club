@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Marry Christmas</title>
+<meta name = "viewport" content = "width = device-width , initial-scale = 1.0 , minimum-scale = 1.0 , maximum-scale = 1.0 , user-scalable = no" />
+<style type = "text/css">
+	html,body{
+		margin:0px;
+		padding:0px;	
+	}
+	canvas{
+		margin:20px auto;	
+	}
+</style>
+</head>
+
+<body>
+	<audio autoplay loop>
+    	<source src = "music/bgmusic.mp3" />
+        <source src = "music/bgmusic.wav" />
+    </audio>
+	<canvas id = "clock" width = "500" height = "500"></canvas>
+    <script>
+		var canvas = document.getElementById("clock");
+		var ctx = canvas.getContext("2d");
+		var baseW,clockR;
+		var hour,minu,seco;
+		function getBaseInfo(){
+			baseW = window.innerWidth;
+			canvas.width = baseW;
+			canvas.height = baseW;
+			clockR = baseW * 220 / 500;		
+		}
+		getBaseInfo();
+		window.onresize = getBaseInfo;
+		function drawScale(count,angle,style,width,length){
+			ctx.save();
+			for(var i = 0; i < count;i++){
+				ctx.beginPath();
+				ctx.rotate(angle*Math.PI/180);
+				ctx.strokeStyle = style;
+				ctx.lineWidth = width * baseW / 500;
+				ctx.moveTo(0,-clockR + 5 * baseW / 500);
+				ctx.lineTo(0,-clockR + 5 * baseW / 500 + length * baseW / 500);
+				ctx.closePath();
+				ctx.stroke();	
+			}
+			ctx.restore();		
+		}
+		function getCurrentTime(){
+			var date = new Date();
+			hour = date.getHours();
+			minu = date.getMinutes();
+			seco = date.getSeconds();
+			hour = hour > 12 ? hour - 12 : hour;
+			hour = hour + (minu / 60) + (seco / 3600);
+			minu = minu + (seco / 60);		
+		}
+		function drawIndicator(type,angle,style,width,start,end){
+			ctx.save();
+			ctx.beginPath();
+			ctx.rotate(type*angle*Math.PI/180);
+			ctx.strokeStyle = style;
+			ctx.lineWidth = width * baseW / 500;
+			ctx.moveTo(0,start * baseW / 500);
+			ctx.lineTo(0,end * baseW / 500);
+			ctx.closePath();
+			ctx.stroke();
+			ctx.restore();	
+		}
+		function drawClock(){
+			//清屏
+			ctx.clearRect(0,0,baseW,baseW);
+			//绘制表盘
+			ctx.beginPath();
+			ctx.strokeStyle = "#0ff";
+			ctx.lineWidth = 10 * baseW / 500;
+			ctx.arc(0.5 * baseW,0.5 * baseW,clockR,0,2*Math.PI);
+			ctx.closePath();
+			ctx.stroke();
+			ctx.clip();
+			//绘制图像
+			var img = new Image();
+			img.src = "img/bg.jpg";
+			ctx.drawImage(img,0.5 * baseW - clockR,0.5 * baseW - clockR,2 * clockR,2 * clockR);
+			//保存状态
+			ctx.save();
+			//转换坐标系
+			ctx.translate(0.5 * baseW,0.5 * baseW);
+			//绘制时刻度
+			drawScale(12,30,"#ff0",10,20);
+			//绘制分刻度
+			drawScale(60,6,"#ff0",7,10);
+			//获取当前时间
+			getCurrentTime();
+			//绘制时针
+			drawIndicator(hour,30,"#ff0",7,10,-130);
+			//绘制分针
+			drawIndicator(minu,6,"#0ff",5,10,-150);
+			//绘制秒针
+			drawIndicator(seco,6,"#f00",3,10,-170);
+			//绘制秒针上的圆环
+			ctx.beginPath();
+			ctx.rotate(seco*6*Math.PI/180);
+			ctx.fillStyle = "#ff0";
+			ctx.strokeStyle = "#f00";
+			ctx.lineWidth = 3 * baseW/500;
+			ctx.arc(0,0,5*baseW/500,0,2*Math.PI);
+			ctx.fill();
+			ctx.stroke();
+			//恢复状态
+			ctx.restore();
+			//显示当前时间
+			ctx.beginPath();
+			ctx.strokeStyle = "#fff";
+			ctx.fillStyle = "#f00";
+			ctx.lineWidth = 2 * baseW / 500;
+			ctx.font = 18*baseW/500 + "px 微软雅黑";
+			var time = Math.floor(hour) + ":" + Math.floor(minu) + ":" + Math.floor(seco);
+			ctx.strokeText(time,0.5*baseW-0.5*ctx.measureText(time).width,435*baseW/500);
+			ctx.fillText(time,0.5*baseW-0.5*ctx.measureText(time).width,435*baseW/500);
+			ctx.closePath();
+		}
+		setInterval(drawClock,1000);
+	</script>
+</body>
+</html>

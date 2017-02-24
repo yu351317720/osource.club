@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+<style>
+body{ background-color:#000;}
+#max{ display: table; position:relative; width:100px; height:100px; transition:all  1s linear 0s; }
+#out{ border:#999 solid 4px; border-radius:100%;  display:table-cell; vertical-align:middle;}
+#in{width:60px; height:60px; border:#fff solid 8px; border-radius:100%; margin:auto; transition:all  1500ms linear 0s;}
+
+#max:hover{ width:110px; height:110px;}
+#max:hover #in{width:48px; height:48px;}
+#lang{ width:100px; position:absolute;}
+</style>
+<body>
+<div id="max">
+<div id="out"><div id="in"></div></div>
+<br />
+<div><input id="lang" type="text" value="我很生气" /></div>
+</div>
+
+</body>
+<script type="text/javascript">
+var outDiv = document.getElementById("max");
+var inDiv = document.getElementById("in");
+var lang = document.getElementById("lang");
+lang.onblur = function(){
+if(lang.value == "我很生气"){
+outDiv.style.borderColor = "red";
+inDiv.style.borderColor = "red";
+} else if(lang.value  == "我很开心"){
+outDiv.style.borderColor = "green";
+inDiv.style.borderColor = "green";
+}
+};
+</script>
+</html>

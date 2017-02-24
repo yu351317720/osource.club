@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+<style>
+
+.fl{ float:left;}
+.disp_inline{ display:inline-block; margin-left:30px;}
+.outline{ outline:#666 solid 1px; }
+.center{ margin:0 auto;} 
+.max{ width:300px; height:300px; border:#CCC solid 1px ; position:relative; }
+
+#nan{ color:#30F; width:200px; height:200px; background-color:#E2EEFC; border-left:#0CF solid 2px; border-bottom:#0CF solid 3px; position:absolute; left:20px; top:40px;}
+#nv{ color:#FF80C0; width:200px; height:200px; background-color:#FFEEF4; border-left:#0CF solid 2px; border-bottom:#0CF solid 3px; position:absolute;  left:20px; top:40px; display:none; }
+
+
+#nan_top1,#nv_top1{ height:10px; width:15px; background-color:#F00; position:absolute; bottom:0px; margin-left:30px; transition:height 2s;}
+#nan_top1:hover,#nv_top1:hover{ height:140px;}
+#nan_top2,#nv_top2{ height:10px; width:15px; background-color:#0f0; position:absolute; bottom:0px; margin-left:75px;transition:height 1.5s;}
+#nan_top2:hover,#nv_top2:hover{ height:100px;}
+#nan_top3,#nv_top3{ height:10px; width:15px; background-color:#00f; position:absolute; bottom:0px; margin-left:120px;transition:height 1s;}
+#nan_top3:hover,#nv_top3:hover{ height:60px;}
+
+#nan_list,#nv_list{  position:absolute; bottom:-25px; margin-left:25px; letter-spacing:2px;}
+#nan_num,#nv_num {  position:absolute; bottom:140px; margin-left:10px; letter-spacing:2px;}
+
+</style>
+
+
+
+
+
+<body>
+<!--
+年龄 ，总收入  ，姓名-->
+<div class="max center ">
+    
+        <div id="nan">
+            <div id="nan_top1"></div>
+            <div id="nan_top2"></div>
+            <div id="nan_top3"></div> 
+            <div id="nan_list"> 房贷  车贷  泡妞 </div>  
+            <div id="nan_num">1600   1000  500 </div>       
+        </div>
+        
+        
+        
+        
+        <div id="nv">
+            <div id="nv_top1"></div>
+            <div id="nv_top2"></div>
+            <div id="nv_top3"></div>
+            <div id="nv_list"> 购物  旅游  吃喝 </div> 
+            <div id="nv_num">1000   800  500 </div>
+        </div>
+        
+        
+        <div class="fl disp_inline " onClick="show_nan()">
+        <input type="radio" id="nan_item"    name="sex" checked="checked"/>
+        <label for="nan_item">男性</label>
+        </div>
+        <div class="fl disp_inline " onClick="show_nv()">
+        <input type="radio" id="nv_item"  name="sex"  />
+        <label for="nv_item">女性</label>
+        </div>
+</div>	 
+
+
+
+
+
+<script>
+
+var  nan = document.getElementById('nan');
+var  nv = document.getElementById('nv');
+	
+function show_nan(){
+	
+	nan.style.display ='block';
+	nv.style.display ='none';
+	}
+	
+function show_nv(){
+		
+	nan.style.display ='none';
+	nv.style.display ='block';
+	}	
+	
+</script>  
+</body>
+</html>

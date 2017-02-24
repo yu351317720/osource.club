@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+<link rel="stylesheet" type="text/css" href="css/index.css"/>
+<script type="text/javascript" src="jq1.9.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<body>
+<form>
+	<table>
+    	<thead>
+    	<tr>        	
+             <th><input type="checkbox"   class="selAll" />全选</th>
+             <th>商品图片</th>
+             <th>商品信息</th>
+             <th>单价(元)</th>
+             <th>数量</th>
+             <th>总价</th>
+             <th>收藏与删除</th>            
+        </tr>
+        </thead>
+        
+        <tbody>
+        <tr>       	
+            <td><input type="checkbox" /><label for="$(this).prev("input")">购买</label></td>
+            <td><img src="../02-幻灯片/img/1.jpg" /></td>
+            <td><dl><dt>商品1</dt><dd style=" font-size:10px">新品上市</dd></dl></td>
+            <td><b>2.6</b></td>
+            <td><button type="button">-</button><input style="width:50px;" type="number" max="5" min="0" value="1"/><button type="button">+</button></td>
+            <td><summary>2.6</summary></td>
+            <td><a>收藏</a>/<a>删除</a></td>           
+        </tr>
+        
+        <tr>       	
+            <td><input type="checkbox"  />购买</td>
+            <td><img src="../02-幻灯片/img/1.jpg" /></td>
+            <td><dl><dt>商品2</dt><dd style=" font-size:10px">新品上市</dd></dl></td>
+            <td><b>2.6</b></td>
+            <td><button type="button">-</button><input style="width:50px;" type="number" max="5" min="0" value="1"/><button type="button">+</button></td>
+            <td><summary>2.6</summary></td>
+            <td><a>收藏</a>/<a>删除</a></td>           
+        </tr>
+        
+        <tr>       	
+            <td><input type="checkbox"  />购买</td>
+            <td><img src="../02-幻灯片/img/1.jpg" /></td>
+            <td><dl><dt>商品3</dt><dd style=" font-size:10px">新品上市</dd></dl></td>
+            <td><b>2.6</b></td>
+            <td><button type="button">-</button><input style="width:50px;" type="number" max="5" min="0" value="1"/><button type="button">+</button></td>
+            <td><b>2.6</b></td>
+            <td><a>收藏</a>/<a>删除</a></td>           
+        </tr>
+        </tbody>
+        
+        <tfoot>
+        	<tr>
+        	<td><input type="checkbox"  class="selAll" />全选</td>
+            <td colspan="4"><a href="">清空所有商品</a></td>          
+            <td>总计:<summary>2.6</summary></td>
+            <td><a href="">确认订单</a></td> 
+            </tr>
+        </tfoot>
+    </table>
+</form>
+<script>
+
+/*function ifChecked(f1,f2){
+
+function aaa(){
+var arr = [];
+var inputs = $("tr input[type='checkbox']");
+
+	for(var i = 0;i<inputs.length ; i++){
+
+		(inputs[i].checked == false) ? inputs[i].value=0 : inputs[i].value=1 ;
+		arr.push(inputs[i].value);			
+	}
+	return arr;//这个不能掉
+}
+//var arr1 = aaa();
+var index = aaa().indexOf("0");
+//(index == -1) ?  alert("已经全选了"):alert("第"+(index+1)+"个input没选中") 
+(index == -1) ?  f1():f2() ;
+}
+$("tbody tr input[type='checkbox']").click(function(){ifChecked(
+function(){alert(1)},
+function(){alert(2)}
+)});*/
+
+
+
+function ifChecked(f1,f2){
+
+function aaa(){
+var arr = [];
+var inputs = $("tr input[type='checkbox']");
+	inputs.each(function(){
+		(inputs.prop("checked") ==false)?inputs.val('0'):inputs.val('1')
+		arr.push(inputs.val());
+	})	
+	return arr;//这个不能掉
+}
+//var arr1 = aaa();
+var index = aaa().indexOf("0");
+//(index == -1) ?  alert("已经全选了"):alert("第"+(index+1)+"个input没选中") 
+(index == -1) ?  f1():f2() ;
+}
+$("tbody tr input[type='checkbox']").click(function(){ifChecked(
+function(){alert(1)},
+function(){alert(2)}
+)});
+
+</script>
+</body>
+</html>

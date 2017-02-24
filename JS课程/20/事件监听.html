@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+<input id="btn" type="button" value="点击">
+<script>
+window.onload = function(){ 
+  var eventOne = function(){ 
+  alert("第一个监听事件"); 
+} 
+function eventTwo(){ 
+  alert("第二个监听事件"); 
+} 
+
+  var btn = document.getElementById("btn"); 
+  //addEventListener：绑定函数 
+  btn.addEventListener("mouseenter",eventOne); 
+  btn.addEventListener("mouseleave",eventTwo); 
+}
+</script>
+</body>
+</html>

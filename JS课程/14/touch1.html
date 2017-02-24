@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>手机阅读平台-动力学院</title>
+<meta content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0" name="viewport">
+</head>
+<style>
+	#box{ width:100px; height:100px; background-color:#C51D20;}
+</style>
+<body>
+<div id="box"></div>
+<h1 id="myh1">RS</h1>
+<h1 id="myh2">RS</h1>
+<h1 id="myh3">RS</h1>
+<h1 id="myh4">RS</h1>
+<h1 id="myh5">RS</h1>
+<h1 id="myh6">RS</h1>
+<h1 id="myh7">RS</h1>
+<h1 id="myh8">RS</h1>
+<h1 id="myh9">RS</h1>
+<h1 id="myh10">RS</h1>
+<script>   
+ 
+var myh1 = document.getElementById("myh1");
+document.addEventListener("touchstart",fn,false);
+function fn(ev){
+ev.preventDefault();
+	myh1.innerHTML = "touches数量："+ev.touches.length+"changedTouches:"+ev.changedTouches.length;	
+}
+</script>
+</body>
+</html>

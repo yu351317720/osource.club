@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+<script type="text/javascript" src="jq1.9.min.js"></script>
+<style>
+	*{ margin:0px; padding:0px; list-style:none;}
+	#box{ position:relative; width:50%; height:300px; border:1px solid #099; overflow:hidden; margin:0 auto;}
+	.box_ul{ width:100%; height:100%; position:relative;}
+	.box_ul li{width: 100%;
+	height: 100%;
+	background: #CCC;
+	display: inline-block;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 0; }
+</style>
+<body>
+<div id="box">	
+	<ul class="box_ul">
+    </ul>
+	<ol class="box_ol">
+    </ol>
+</div>
+<script>
+	var ahtml = "<li>1</li> <li>2</li> <li>3</li> <li>4</li> <li>5</li>";
+	$(".box_ul").html(ahtml);
+	
+	window.onresize = function(){
+		 var box_w = $("#box").width();
+		$("#box").height(box_w*0.5);
+	}
+	
+	$(".box_ul li").each(function(index, element) {
+        
+    });
+	
+</script>
+</body>
+</html>

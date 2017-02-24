@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+<canvas id="mycanvas" width="200" height="200">
+</canvas>
+</body>
+<script>
+	var c = document.getElementById("mycanvas")
+	var ctx = c.getContext("2d");
+	ctx.fillRect(0,0,200,200);	
+	ctx.moveTo(50,50);
+	ctx.strokeStyle = 'red';
+	ctx.lineWidth = 5;
+	ctx.arcTo(150,60,70,180,100);
+	ctx.stroke();
+	ctx.beginPath();
+	ctx.moveTo(60,60);
+	ctx.strokeStyle = 'blue';
+	ctx.lineWidth = 5;
+	ctx.arcTo(150,60,70,180,40);
+	ctx.stroke();
+</script>
+</html>

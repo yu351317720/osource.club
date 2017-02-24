@@ -1,0 +1,420 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>xxx酒店首页</title>
+<script type="text/javascript" src="js/jq1.9.min.js"></script>
+</head>
+<style>
+body {
+	font-family: "微软雅黑", "黑体", "宋体"
+}
+ul, li, body, h1, h2, h3, h4, h5, h6, img, p {
+	margin: 0px;
+	padding: 0px;
+}
+#Map area {
+	outline: none;
+}
+ul {
+	list-style: none
+}
+.w892 {
+	margin: 0 auto;
+	width: 892px;
+}
+a {
+	text-decoration: none;
+}
+
+.a_colorRed{ color:#F00}
+
+/*---------------------------------------------------------------------------*/	
+	
+header {
+	background: url(img/bg-top.png) repeat-x;
+	height: 190px;
+}
+#nav li {
+	display: inline-block;
+	float: left;
+	width: 120px;
+	line-height: 40px;
+	text-align: center;
+	background: no-repeat url(img/navline.jpg);
+}
+#nav li:first-child {
+	width: 50px;
+	line-height: 40px;
+}
+#nav li h4 a {
+	color: #e6af57;
+}
+.sub {
+	display:none;
+	width: 120px;
+	line-height: 40px;
+	text-align: center;
+	background-color: #FC9;
+}
+.sub a {
+	display: block;
+}
+.sub a:hover{ background-color:#930; color:#F90;}
+
+
+/*幻灯片css*/
+#banner{ z-index:-100; width:100%;height:389px;  background-color:#C90; background:url(img/inedx_banner_bg.jpg) repeat-x;position:absolute; top:190px;  overflow:hidden;}
+#box{ z-index:-100; position:relative;}
+#img {	
+	filter: alpha(opacity=100); /*IE滤镜，透明度50%*/
+	-moz-opacity:1; /*Firefox私有，透明度50%*/
+	opacity: 1;/*其他，透明度50%*/
+}
+#aaa {
+	position: absolute;
+	top:360px;
+	left: 800px;
+}
+#bbb {
+	position: absolute;
+	top: 360px;
+	left: 830px;
+}
+
+</style>
+
+ <!---banner部分------>
+    <style>
+	#form1{ padding:10px; background-color:#000;  opacity:0.7; width:260px; height:400px; position:absolute; top:0; left:0px; overflow:hidden;}	
+	#img1{ margin-top:-20px; margin-left:20px;}
+	#img2{ margin-top:-5px; margin-left:20px;}
+	#form1 label{ color:#BCAA91; font-size:10px;}
+	#hotail{ width:176px;}
+	#daima { width:152px;}
+	#intime,#outtime{ width:60px;}
+	#form1 input{ background-color:#999;}
+	input { border:none;}/*清除所有input标签的外边*/
+	#form1 p{ margin-left:30px; margin-top:20px;color:#FD7032; font-size:10px;}
+	#form1 span{ display:block; background-color:#F0AC27; border-radius:10px; color:#FFF;font-size:16px; width:120px; height:20px; line-height:20px; text-align:center; margin-left:60px; margin-top:20px; opacity:1;}
+	#form1 label a{ color:#EBC371; font-size:20px;}	
+	</style>
+<!---banner部分end------>
+
+<!-----会员登录---->
+ <style>
+ 	#middle_content{ position:relative;}
+	#content{ background-color:#201004; position:absolute; top:579px; width:100%;}
+	#content_left_top{ background-color:#532D08; border:#64380F solid 1px; width:280px; margin-top:20px; padding-top:5px; text-align:center; color:#EFA558; height:25px;}
+	#form2{ width:280px; height:120px; color:#BCAA91; font-size:14px; background-color:#3E2308;border:#64380F solid 2px; text-align:center; padding-top:20px; margin-top:5px;}
+	#form2 input { width:150px; background-color:#633C15; margin:5px;}
+	#button{ position:relative;}
+	#span_l{ position:absolute; top:8px; left:100px;}
+	#span_r{ position:absolute; top:8px; left:170px;}
+	#button span a { color:#FC6;}
+	#form2>a { color:#BCAA91; font-size:10px; margin-left:30px;}
+	</style>
+<!-----会员登录end---->
+<!-----新闻中心---->
+	<style title="news">
+				#news{ width:598px; height:180px; position:absolute; top:0px; left:295px; background:url(img/news_bg.png) no-repeat; background-size:100% 100%; }
+				#news p{ position:absolute; left:30px; color:#EFA558;}
+				#news img{ width:190px; height:105px; position:absolute; top:35px; left:20px;}
+				#news  ul{ position:absolute; left:235px; top:25px;}
+				#news  ul li{ width:355px;}
+				#news  ul li a{color:#BB7745; font-size:10px; white-space:nowrap; display:inline-block; overflow:hidden; text-overflow:ellipsis; line-height:25px; width:260px;} 
+				#news  ul li span{ float:right; font-size:10px; color:#FFF;}
+				#news  ul li a:hover{ color:#B7A48B;}
+				.more { width:50px; height:18px; border-radius:10px; background-color:#000; position:absolute; right:20px; top:5px;text-align:center; }
+				.more a{ color:#999; font-size:12px;  }
+				#news>span{ color: #78474D; position:absolute; bottom:20px; left:20px; font-size:8px;}
+				#news>date{ color: #999; position:absolute; bottom:5px; left:80px; font-size:8px;}
+			</style>
+<!-----新闻中心end---->
+
+<body onload="bofang()">
+<header>
+  <div id="logo" class="w892"><img src="img/logo-top.jpg" alt="logo" width="892" height="147" usemap="#Map" border="0"/>
+    <map name="Map" id="Map">
+      <area shape="rect" coords="354,5,537,146" href="http://www.baidu.com" alt="logo" target="_blank"/>
+      <area shape="rect" coords="677,103,890,141" href="#" target="new" alt="tel" />
+    </map>
+  </div>
+  <nav>
+    <ul class="w892" id="nav">
+      <li>
+        <h4><a href="index.html">首页</a></h4>
+      </li>
+      <li>
+        <h4><a href="">关于我们</a></h4>
+        <div class="sub"> <a href="">二级菜单1</a> <a href="">二级菜单2</a> <a href="">二级菜单3</a> <a href="">二级菜单1</a> <a href="">二级菜单2</a> <a href="">二级菜单3</a> </div>
+      </li>
+      <li>
+        <h4><a href="">关于我们</a></h4>
+        <div class="sub"> <a href="">二级菜单1</a> <a href="">二级菜单2</a> <a href="">二级菜单3</a> </div>
+      </li>
+      <li>
+        <h4><a href="">关于我们</a></h4>
+        <div class="sub"> <a href="">二级菜单1</a> <a href="">二级菜单2</a> <a href="">二级菜单3</a> </div>
+      </li>
+      <li>
+        <h4><a href="">关于我们</a></h4>
+        <div class="sub"> <a href="">二级菜单1</a> <a href="">二级菜单2</a> <a href="">二级菜单3</a> </div>
+      </li>
+      <li>
+        <h4><a href="">关于我们</a></h4>
+        <div class="sub"> <a href="">二级菜单1</a> <a href="">二级菜单2</a> <a href="">二级菜单3</a> </div>
+      </li>
+      <li>
+        <h4><a href="">关于我们</a></h4>
+        <div class="sub"> <a href="">二级菜单1</a> <a href="">二级菜单2</a> <a href="">二级菜单3</a> </div>
+      </li>
+      <li>
+        <h4><a href="">关于我们</a></h4>
+        <div class="sub"> <a href="">二级菜单1</a> <a href="">二级菜单2</a> <a href="">二级菜单3</a> </div>
+      </li>
+    </ul>
+  </nav>
+</header>
+<div id="banner">
+  <div id="box" class="w892" >
+  <!--幻灯片--->
+    <img  id="img" class="w892" src="img/1.jpg" alt="banner"  onmouseover="tingzhi()" onmouseout="bofang()"/>	
+    <input id="aaa" type="button" onclick="next(1)" value="<" />
+	<input id="bbb" type="button" onclick="next(0)" value=">" />
+    
+    <form action="" method="post" id="form1" enctype="multipart/form-data" >
+    <img id="img1" src="img/hua1.png" width="221" height="30"  alt="hua1"/>
+    	<h3 style="color:#fff">在线预订</h3>
+        <h1 style="color:#9E6E40">SCHEDULED</h1>
+        <h5 style="color:#fff">ONLINE SCHEDULED</h5>
+        <br />
+        <label for="hotail">酒店名称:</label><input id="hotail" type="text"/>
+        <br />
+        <label>入住日期:</label><input id="intime" type="text"/>
+        <label>离店日期:</label><input id="outtime" type="text"/>
+        <br />
+        <br />
+        <label>房间:</label>
+        <select>  
+          <option value ="1">1</option>  
+          <option value ="2">2</option>  
+          <option value="3">3</option>  
+          <option value="4">4</option>  
+        </select> 
+        
+        <label>成人:</label>
+        <select>  
+          <option value ="1">1</option>  
+          <option value ="2">2</option>  
+          <option value="3">3</option>  
+          <option value="4">4</option>  
+        </select> 
+        
+        <label>儿童:</label>
+        <select>  
+          <option value ="1">1</option>  
+          <option value ="2">2</option>  
+          <option value="3">3</option>  
+          <option value="4">4</option>          
+        </select> 
+        
+        <p>"成人为18岁以上,儿童为18岁以下"</p>
+        <br />
+        <label>提供促销代码:</label><input id="daima" type="text"/>
+        <a href=""><span>立刻预订&gt;&gt;</span></a>
+         <br />
+        <label>您还可以致电预订中心:<a href="">05362231666</a></label>
+        
+        <img id="img2" src="img/hua2.png" width="221" height="30" alt="hua2" />
+    </form>
+    
+    </div>
+    
+</div>
+<!---//幻灯片的js代码s------>
+<script>
+var banner = new Array();
+	banner[0] = 'img/1.jpg';
+	banner[1] = 'img/2.jpg';
+	banner[2] = 'img/3.jpg';
+	banner[3] = 'img/4.jpg';
+	
+
+for(i=0;i<banner.length;i++){
+	var imgObj = new Image();		
+	imgObj.src =banner[i];
+	
+}
+
+var k = 0;
+
+//自动播放的方法
+function play(){
+	if(k>banner.length-2){k=-1}
+	k +=1;
+	document.getElementById('img').src =banner[k];						
+}
+		
+//左右翻页的方法
+function next(arr){
+	if(arr == 1){
+		if(k<1){k=banner.length}			
+		clearInterval(timer);
+		k -=1;
+		document.getElementById('img').src =banner[k]
+		}else if(arr == 0){	
+		if(k>banner.length-2){k=-1}		
+		clearInterval(timer);
+		k +=1;
+		document.getElementById('img').src =banner[k];								
+	}		
+}
+	
+//左右翻页的方法
+function next(arr){
+	if(arr == 1){
+		if(k<1){k=banner.length}			
+		clearInterval(timer);
+		k -=1;
+		document.getElementById('img').src =banner[k]
+		}else if(arr == 0){	
+		if(k>banner.length-2){k=-1}		
+		clearInterval(timer);
+		k +=1;
+		document.getElementById('img').src =banner[k];								
+	}		
+}
+	
+	
+//播放的方法
+function bofang(){
+ timer = setInterval(play,3000);
+}
+	
+	
+//停止的方法
+function tingzhi(){
+clearInterval(timer);
+}
+</script>
+    <!---banner结束------>
+    
+	<!---content开始------>
+<div id="content">
+    	<div class="w892" id="middle_content">
+        	<div id="content_left_top">MEMBERS LOGON 会员登录</div>
+            <div id="content_left_bottom">
+            <form id="form2">
+            	<label for="login">登录:</label><input id="login" type="text" />
+                <br />
+                <label for="pwd">密码:</label><input id="pwd" type="password" />
+                <br />
+                <div id="button"><img src="img/button.png" width="221" height="30" alt="button" /><span id="span_l"><a href="">确定</a></span><span id="span_r"><a href="">取消</a></span></div>                
+                <a href="">今天你注册了吗?</a>
+                <a href="">忘记密码?</a>                
+            </form>            
+            </div>
+            <div id="news">
+            	<p>NEWS 新闻中心</p>
+                <img src="img/2.jpg" />
+                <span> 限时特惠 $349起抢订晨鸣国际大酒店</span>                
+                <date>post：2010.10.26</date>
+                <ul>
+                	<li><a href="">魏源酒店推出五折房价限时特惠魏源酒店推出五折房价限时</a><span>[2010-12-04]</span></li>
+                    <li><a href="">魏源酒店推出五推出五折房价限时</a><span>[2010-12-04]</span></li>
+                    <li><a href="">魏源酒店推出五折房价限时特惠魏源酒店推出五折房价限时</a><span>[2010-12-04]</span></li>
+                    <li><a href="">魏源酒店推出五源酒店推出房价限时特推出五折房价限时</a><span>[2010-12-04]</span></li>
+                    <li><a href="">魏源酒店推出五折房价限时特推出五折房价限时</a><span>[2010-12-04]</span></li>
+                </ul>
+                <div class="more"><a href="">more</a></div>
+            </div>
+            
+    <!---content结束------>
+    
+	<!---SPECIAL开始------>       
+            
+            <div id="special">
+                <p>SPECIAL 精选特惠</p>
+                
+                <div id="box1">
+                    <div id="box2">                    
+                        <ul id="ul1">
+                            <li><img src="img/1.jpg" width="200" height="200"  /></li>
+                            <li><img src="img/2.jpg" width="200" height="200" /></li>
+                            <li><img src="img/3.jpg" width="200" height="200" /></li>
+                            <li><img src="img/4.jpg" width="200" height="200" /></li>                              
+                        </ul>
+                        <ul id="ul2"></ul>                    
+                    </div>
+                </div>
+				<div class="more"><a href="">more</a></div>
+            </div>
+            <style>             	
+				#special{ position:relative; margin-top:15px; height:255px; background:url(img/special_bg.png) no-repeat;background-size:100% 100%; }
+				#special p{color:#EFA558; position:absolute; left:70px; top:10px;}
+				#box1 { position:relative;left:20px; top:40px; width:850px;  height:220px; overflow:hidden;}				
+				#box2 { width:1800px; position:absolute; }
+				#box2 ul {width:890px; height:120px;float:left;}
+				#box2 ul li { float:left; display:block; padding-right:20px;}
+            </style>
+            <script>
+				var box1 = document.getElementById("box1");
+				var ul1 = document.getElementById("ul1");
+				var ul2 = document.getElementById("ul2");
+				ul2.innerHTML = ul1.innerHTML;
+				var timer = i = 0;
+				var w = parseInt(window.getComputedStyle(ul1,null)["width"]);				
+				timer = setInterval(autoplay ,30);
+				function autoplay(){
+						if(i>=w){i = 0};
+						box1.scrollLeft=i;
+						i++;
+				}				
+			</script>
+            <!---SPECIAL结束------>
+            
+            <div id="friendlyLink">
+                <p>》》友情链接</p>
+                <ul>
+                    <li><img src="img/youqinglianjie/1.jpg" /></li>
+                    <li><img src="img/youqinglianjie/2.jpg" /></li>
+                    <li><img src="img/youqinglianjie/3.jpg" /></li>
+                    <li><img src="img/youqinglianjie/4.jpg" /></li>
+                    <li><img src="img/youqinglianjie/5.jpg" /></li>                
+                </ul>
+                 <style>             	
+                    #friendlyLink { position:relative; background-color:#010101;}
+                    #friendlyLink p{color:#EFA558; position:absolute; left:20px; top:10px;}				
+                    #friendlyLink ul { position:absolute; left:145px; top:0px; width:1000px; overflow:hidden;}
+                    #friendlyLink ul li { float:left; display:block; padding-right:20px;}
+                </style>
+        	</div>
+        </div>
+    	
+        
+    </div>
+    
+  
+
+
+<!---  导航js------>
+<script>
+$(document).ready(function(e) {
+    $("#nav li").hover(
+		function(){
+			/*$(this).children("div").css('display','block').siblings("h4").children("a").css("color","red");*/		
+			$(this).children("div").stop(true,true).slideDown().siblings("h4").children("a").css("color","red");
+			},		
+		function(){
+			$(this).children("div").stop(true,true).slideUp().siblings("h4").children("a").css("color","#e6af57");
+			}
+		
+	)
+});
+
+</script>
+
+
+</body>
+</html>

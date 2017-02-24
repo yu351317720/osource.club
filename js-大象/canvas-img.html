@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>canvas幻灯片</title>
+</head>
+<style type="text/css">
+	canvas { border: #2E858A 1px solid;}
+</style>
+<body>
+
+<canvas id="mycanvas" width="400" height="265" >你的浏览器不支持canvas
+</canvas>
+</body>
+
+
+<script type="text/javascript">
+	function drawBeauty(beauty){		
+		var mycv = document.getElementById("mycanvas");  
+		var myctx = mycv.getContext("2d");
+		myctx.drawImage(beauty, 0, 0, 400,265 );//( HTML<img>对象, 图片起点坐标x,y  缩放width, height)
+	}
+	
+	var src =["mv.jpg","mv1.jpg","mv2.jpg","http://photocdn.sohu.com/20161223/Img476718617.jpg"];//要循环的图片数组
+	
+	function loadImg(){
+		var i= timer =0;		
+		var beauty = new Image(); 
+		clearInterval(timer);
+		timer= setInterval(fn,2000);
+		
+		function fn(){			
+			
+			(i==src.length) ? (i=0) : null;			
+			beauty.src = src[i];
+			i++;
+			if(beauty.complete){
+		        drawBeauty(beauty);   // 如果图片已经存在于浏览器缓存，直接调用回调函数 
+			}else{
+			  	beauty.onload = function(){
+					drawBeauty(beauty);
+			  	};
+			   	beauty.onerror = function(){
+					document.write('美女加载失败，请重试');
+			   	};
+			}
+		
+		};   
+	}//load
+if (document.all) {
+  window.attachEvent('onload', loadImg);  
+  }else {  
+  window.addEventListener('load', loadImg, false);
+  }
+</script>
+
+</html>

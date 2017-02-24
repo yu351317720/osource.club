@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+<style>
+	ul, li { padding:0; margin:0;}
+	ul{ background-color:#0CF; width:500px; height:300px; position:relative; list-style:none;}
+	ul li{ width:500px; height:300px; position:absolute; top:0px; left:0px; background-color:#9C6;display:none;}
+</style>
+<body>
+<div>
+	<ul>
+    	<li>1111</li>
+        <li>2222</li>
+        <li>333</li>
+        <li>44444</li>
+    </ul>
+</div>
+<script>
+var lis = document.getElementsByTagName('li');
+//var i = 0;
+//var j = window.getComputedStyle(lis[i],null).display;
+//	alert(j);
+	turnPic();
+	function turnPic(){
+		var k = 0;
+		k++;
+		if (k == i){
+			lis[i].style.display = 'none';	
+		}
+		
+		for(var i = 0; i<=lis.length;i++){
+		lis[i].style.display = 'block';
+		//window.getComputedStyle(lis[i],null).display = 'block';
+		}
+		setTimeout(turnPic,3000);
+		}
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+<script src="../jq1.9.min.js"></script>
+<script>
+$(document).ready(function(e) { 
+   $('#aaa').click(function(){	
+   	$('div').load('../20/事件监听.html');		
+		});
+});
+</script>
+
+<body>
+<div id="div"> </div>
+<input type="button" id="aaa" value="ajax调用">
+</body>
+</html>

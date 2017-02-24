@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>判断哪个浏览器</title>
+</head>
+
+<body>
+</body>
+<script>
+	var userAgent = navigator.userAgent;
+	switch(true){
+		case 	userAgent.indexOf("Edge")>-1: alert("microsoftEdge");
+		break;
+		case 	userAgent.indexOf("rv:11.0")>-1: alert("IE11");
+		break;
+		case 	userAgent.indexOf("MSIE 10.0")>-1: alert("IE10");
+		break;
+		case 	userAgent.indexOf("MSIE 9.0")>-1: alert("IE9");
+		break;
+		case 	userAgent.indexOf("MSIE 8.0")>-1: alert("IE8");
+		break;	
+		case 	userAgent.indexOf("MSIE 7.0")>-1: alert("IE7");
+		break;		
+		case 	userAgent.indexOf("Firefox")>-1: alert("firefox");
+		break;
+		case 	userAgent.indexOf("Chrome") >-1: alert("Chrome");
+		break;			
+		default: alert("~~!知浏览器");
+	}	
+	
+	console.log(!3 || 3>1);
+	
+	console.log(2&3);
+	
+	console.log(3&5);
+	
+</script>
+</html>
+
+
+<!--
+
+11   Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; .NET4.0C; .NET4.0E; .NET CLR 2.0.50727; .NET CLR 3.0.30729; .NET CLR 3.5.30729; rv:11.0) like Gecko
+10   Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 10.0; WOW64; Trident/8.0; .NET4.0C; .NET4.0E; .NET CLR 2.0.50727; .NET CLR 3.0.30729; .NET CLR 3.5.30729)
+9    Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 10.0; WOW64; Trident/8.0; .NET4.0C; .NET4.0E; .NET CLR 2.0.50727; .NET CLR 3.0.30729; .NET CLR 3.5.30729)
+8    Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 10.0; WOW64; Trident/8.0; .NET4.0C; .NET4.0E; .NET CLR 2.0.50727; .NET CLR 3.0.30729; .NET CLR 3.5.30729)
+7    Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 10.0; WOW64; Trident/8.0; .NET4.0C; .NET4.0E; .NET CLR 2.0.50727; .NET CLR 3.0.30729; .NET CLR 3.5.30729)
+
+-->

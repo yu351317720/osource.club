@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<script type="text/javascript">
+window.onload=function() {
+	var canvas = document.getElementById('canvas');
+	if (canvas == null){
+		return false;
+		}
+		var context = canvas.getContext('2d');//获取上下文的对象
+		context.fillStyle = '#EEEEFF';//填充颜色
+		context.fillRect(0,0,400,300);
+		//画布
+		context.fillStyle ='#ff0000';
+		context.strokeStyle ='#000000';
+		context.lineWidth =1;
+		//边框
+		context.fillRect(50,50,100,100);
+		context.strokeRect(50,50,100,100);
+		//矩形
+		
+		context.arc(x,y,半径,弧形开始,弧形结束,顺时针);
+		context.beginPath();
+		context.arc(100,100,50,0,Math.PI,true);
+		context.closePath();
+		context.fillStyle = 'rgba(255,0,0,0.5)';
+		//绘制半圆
+		
+		context.moveTo(200,20);
+		context.lineTo(100,200);
+		context.stroke();
+		//绘制直线
+		
+		
+	}
+</script>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+<canvas id="canvas" >
+
+</canvas>
+
+</body>
+</html>

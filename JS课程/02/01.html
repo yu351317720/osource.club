@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+<input id="show" name="show" value="show" type="button">
+<input id="hide" name="hide" value="hide" type="button">
+<p id="p">aaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+<script>
+var show = document.getElementById('show');
+var hide = document.getElementById('hide');
+var  p = document.getElementById('p');
+ show.onclick = function(){
+	 p.style.display = 'none';
+	  }
+hide.onclick = function (){
+	 p.style.display = 'block';
+	  }
+</script>
+
+</body>
+</html>

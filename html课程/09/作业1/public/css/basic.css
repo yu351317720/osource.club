@@ -1,0 +1,15 @@
+/* CSS Document */
+*{  margin:0px;
+	padding:0px;
+	}
+	
+html{ 
+	color:#000;
+	font-family: "楷体", "微软雅黑", "宋体";
+	}
+a:hover{ color:#09F;}
+a{ color:#000; text-decoration:none;}	
+
+
+
+.clearfloat{ clear:both;}

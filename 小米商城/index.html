@@ -1,0 +1,431 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="public/css/basic.css">
+<link rel="shortcut icon" type="image/x-icon" href="public/img/000.ico" media="screen" />
+<!--<link rel="stylesheet" type="text/css" href="public/css/index.css">------->
+<meta charset="utf-8">
+<title>模拟小米商城</title>
+</head>
+<script>
+window.onload = function count(){
+        if (localStorage.pagecount){
+        localStorage.pagecount=Number(localStorage.pagecount) +1;
+        }else{
+        localStorage.pagecount=1;
+        }
+        document.title = "您的这个浏览器访问了"+ localStorage.pagecount + "次本网页。";
+}
+function oversub(a){ 
+if(a == 1) {
+	var divSub = document.getElementById('max_div_top_nav_sub');
+		divSub.style.display ='block';
+	}
+}
+
+function outsub(a){ 
+if(a == 1) {
+	var divSub = document.getElementById('max_div_top_nav_sub');
+		
+		divSub.style.display ='none';
+	}
+}
+</script>
+<body>
+<div class="top black_bg">
+  <div class="top_nav"> <a href="">小米网<span>|</span></a> <a href="">MIUI<span>|</span></a> <a href="">米聊<span>|</span></a> <a href="">游戏<span>|</span></a> <a href="">多看阅读<span>|</span></a> <a href="">小米网移动版<span>|</span></a> <a href="">问题反馈<span>|</span></a> <a href="">SelectRegion<span>|</span></a> 
+    
+    <!----下面三个右浮动，顺序会颠倒过来-------> 
+    <a href="">购物车</a> <a href="">注册</a> <a href="">登录</a> </div>
+</div>
+<div class="center"> 
+  <!---top顶部导航----->
+  <div id="max_div_top">
+    <div id="max_div_top_logo"> <img src="public/img/logo.png" /> <img src="public/img/haidaoquannew.gif" /> </div>
+    <ul id="max_div_top_nav" >
+      <li onMouseOver="oversub(1)" onMouseOut="outsub(1)">小米手机</li>
+      <li onMouseOver="oversub(1)" onMouseOut="outsub(1)">红米</li>
+      <li onMouseOver="oversub(1)" onMouseOut="outsub(1)">平板</li>
+      <li onMouseOver="oversub(1)" onMouseOut="outsub(1)">电视</li>
+      <li onMouseOver="oversub(1)" onMouseOut="outsub(1)">盒子-影音</li>
+      <li onMouseOver="oversub(1)" onMouseOut="outsub(1)">路由器</li>
+      <li onMouseOver="oversub(1)" onMouseOut="outsub(1)">智能硬件</li>
+      <li onMouseOver="oversub(1)" onMouseOut="outsub(1)">服务</li>
+      <li onMouseOver="oversub(1)" onMouseOut="outsub(1)">社区</li>
+    </ul>
+    <div  id="max_div_top_nav_sub"  onMouseOver="oversub(1)" onMouseOut="outsub(1)">
+      <div >
+        <ul>
+          <li>
+            <div><img src="public/img/nav_sub.jpg"></div>
+            <div><a href="http://www.mi.com" target="_blank">小米MAX</a></div>
+            <p>1499元</p>
+          </li>
+          <hr />
+          <li>
+            <div><img src="public/img/nav_sub.jpg"></div>
+            <div><a href="http://www.mi.com" target="_blank">小米MAX</a></div>
+            <p>1499元</p>
+          </li>
+          <hr />
+          <li>
+            <div><img src="public/img/nav_sub.jpg"></div>
+            <div><a href="http://www.mi.com" target="_blank">小米MAX</a></div>
+            <p>1499元</p>
+          </li>
+          <hr />
+          <li>
+            <div><img src="public/img/nav_sub.jpg"></div>
+            <div><a href="http://www.mi.com" target="_blank">小米MAX</a></div>
+            <p>1499元</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="max_div_top_search" class="position_r">
+      <form id="search" name="search" method="get" enctype="multipart/form-data" action="#">
+        <input type="submit" value="搜索"/>
+        <input type="search" list="new" placeholder="红米3">
+        <datalist id="new">
+          <option>小米手环</option>
+          <option>红米pro</option>
+          <option>小米笔记本</option>
+          <option>小米MAX</option>
+          <option>小米5</option>
+        </datalist>
+      </form>
+      <a class="search-introduce" style="background-color:#CCC; font-size:10px; line-height:18px; position:absolute; top:43px; left:140px;">小米pro</a>
+      <a class="search-introduce" style="background-color:#CCC; font-size:10px; line-height:18px; position:absolute; top:43px; left:190px;">小米5</a>
+       
+    </div>
+  </div>
+  <div class="clearfoalt"></div>
+  
+  <!---幻灯片导航区------->
+  <div id="max_div_nav">
+    <div id="max_div_nav_ul">
+      <ul type="none">
+        <li ><a href="#">手机平板电话卡</a>
+          <label>&gt;</label>
+          <div class="position_a" >
+            <ul  class="sub_shop position_r">
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b qiangou">小米手机5</span> </a> </li>
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b qiangou">小米手机5</span> </a> </li>
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b">小米手机5</span> </a> </li>
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b">小米手机5</span> </a> </li>
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b">小米手机5</span> </a> </li>
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b qiangou">小米手机5</span> </a> </li>
+            </ul>
+          </div>
+        </li>
+        <li><a href="#">电视盒子</a>
+          <label>&gt;</label>
+          <div class="position_a" >
+            <ul  class="sub_shop position_r">
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b qiangou">小米手机5</span> </a> </li>
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b qiangou">小米手机5</span> </a> </li>
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b qiangou">小米手机5</span> </a> </li>
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b qiangou">小米手机5</span> </a> </li>
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b">小米手机5</span> </a> </li>
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b">小米手机5</span> </a> </li>
+            </ul>
+          </div>
+        </li>
+        <li><a href="#">平板</a>
+          <label>&gt;</label>
+          <div class="position_a" >
+            <ul  class="sub_shop position_r">
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b qiangou">小米手机5</span> </a> </li>
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b qiangou">小米手机5</span> </a> </li>
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b">小米手机5</span> </a> </li>
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b qiangou">小米手机5</span> </a> </li>
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b">小米手机5</span> </a> </li>
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b">小米手机5</span> </a> </li>
+            </ul>
+          </div>
+        </li>
+        <li><a href="#">电视机</a>
+          <label>&gt;</label>
+          <div class="position_a" >
+            <ul  class="sub_shop position_r">
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b qiangou">小米手机5</span> </a> </li>
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b qiangou">小米手机5</span> </a> </li>
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b">小米手机5</span> </a> </li>
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b">小米手机5</span> </a> </li>
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b">小米手机5</span> </a> </li>
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b">小米手机5</span> </a> </li>
+            </ul>
+          </div>
+        </li>
+        <li><a href="#">盒子-影音</a>
+          <label>&gt;</label>
+          <div class="position_a" >
+            <ul  class="sub_shop position_r">
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b qiangou">小米手机5</span> </a> </li>
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b qiangou">小米手机5</span> </a> </li>
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b">小米手机5</span> </a> </li>
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b">小米手机5</span> </a> </li>
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b">小米手机5</span> </a> </li>
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b">小米手机5</span> </a> </li>
+            </ul>
+          </div>
+        </li>
+        <li><a href="#">路由器</a>
+          <label>&gt;</label>
+          <div class="position_a" >
+            <ul  class="sub_shop position_r">
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b qiangou">小米手机5</span> </a> </li>
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b qiangou">小米手机5</span> </a> </li>
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b">小米手机5</span> </a> </li>
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b">小米手机5</span> </a> </li>
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b">小米手机5</span> </a> </li>
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b">小米手机5</span> </a> </li>
+            </ul>
+          </div>
+        </li>
+        <li><a href="#">智能硬件</a>
+          <label>&gt;</label>
+          <div class="position_a" >
+            <ul  class="sub_shop position_r">
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b qiangou">小米手机5</span> </a> </li>
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b qiangou">小米手机5</span> </a> </li>
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b">小米手机5</span> </a> </li>
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b qiangou">小米手机5</span> </a> </li>
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b">小米手机5</span> </a> </li>
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b">小米手机5</span> </a> </li>
+            </ul>
+          </div>
+        </li>
+        <li><a href="#">服务</a>
+          <label>&gt;</label>
+          <div class="position_a" >
+            <ul  class="sub_shop position_r">
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b qiangou">小米手机5</span> </a> </li>
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b qiangou">小米手机5</span> </a> </li>
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b">小米手机5</span> </a> </li>
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b qiangou">小米手机5</span> </a> </li>
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b">小米手机5</span> </a> </li>
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b">小米手机5</span> </a> </li>
+            </ul>
+          </div>
+        </li>
+        <li><a href="#">社区</a>
+          <label>&gt;</label>
+          <div class="position_a" >
+            <ul  class="sub_shop position_r">
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b qiangou">小米手机5</span> </a> </li>
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b qiangou">小米手机5</span> </a> </li>
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b">小米手机5</span> </a> </li>
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b">小米手机5</span> </a> </li>
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b qiangou">小米手机5</span> </a> </li>
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b">小米手机5</span> </a> </li>
+            </ul>
+          </div>
+        </li>
+        <li><a href="#">小说</a>
+          <label>&gt;</label>
+          <div class="position_a" >
+            <ul  class="sub_shop position_r">
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b qiangou">小米手机5</span> </a> </li>
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b ">小米手机5</span> </a> </li>
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b">小米手机5</span> </a> </li>
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b">小米手机5</span> </a> </li>
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b">小米手机5</span> </a> </li>
+              <li class="float_l"> <a href="#" > <img  class="float_l inline_b" src="public/img/small_shop.png" alt="shop_logo" /> <span class="float_l inline_b qiangou">小米手机5</span> </a> </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div id="max_div_nav_img"> <a href="#">&lt;</a> <a href="#" >&gt;</a> </div>
+    <div class="clearfoalt"></div>
+  </div>
+  
+  <!---幻灯片导航区-底部区域------>
+  <div id="max_div_tuijian"> </div>
+  <div class="clearfloat"></div>
+  <div id="max_div_mingxianchangpin"></div>
+  <div id="max_div_zhinengyingjian"></div>
+</div>
+<div class="clearfloat"></div>
+
+<!----电信专场--------->
+<div class="center under-nav">
+	<div id="grid" class="grid float_l">
+    	<ul>
+        	<li><a href="#"><img src="public/img/000.ico">电信专场</a></li>
+            <li><a href="#"><img src="public/img/000.ico">企业团购</a></li>
+            <li><a href="#"><img src="public/img/000.ico">官翻产品</a></li>
+            <li><a href="#"><img src="public/img/000.ico">小米移动</a></li>
+            <li><a href="#"><img src="public/img/000.ico">以旧换新</a></li>
+            <li><a href="#"><img src="public/img/000.ico">话费充值</a></li>
+        </ul>
+    </div>
+    
+    <div id="img-list" class="img-list float_l">
+    	<ul>
+        	<li><a><img src="public/img/grid1.jpg"></a></li>
+            <li><a><img src="public/img/grid2.jpg"></a></li>
+            <li><a><img src="public/img/grid3.jpg"></a></li>
+        </ul>
+    </div>
+    
+</div>
+
+<!---小米明星单品----->
+<div id="mingxing_area">
+    <div  id="mingxing" class="center clearfloat area_title">
+        <h2 class="float_l">小米明星单品</h2>
+        <div class="float_r">
+            <a href="">&lt;</a>
+            <a href="">&gt;</a>
+        </div>
+    </div>
+    <div id="mingxing_content" class="center">
+        <ul>
+            <li class="float_l"><img src="public/img/mingxing1.png"><a href="">小米手机5 尊享版</a><p>4GB内存+128GB闪存，陶瓷版</p><span>1999元</span></li>
+            <li class="float_l"><img src="public/img/mingxing2.png"><a href="">小米手机5 尊享版</a><p>4GB内存+128GB闪存，陶瓷版</p><span>1999元</span></li>
+            <li class="float_l"><img src="public/img/mingxing3.png"><a href="">小米手机5 尊享版</a><p>4GB内存+128GB闪存，陶瓷版</p><span>1999元</span></li>
+            <li class="float_l"><img src="public/img/mingxing4.png"><a href="">小米手机5 尊享版</a><p>4GB内存+128GB闪存，陶瓷版</p><span>1999元</span></li>
+            <li class="float_r"><img src="public/img/mingxing5.png"><a href="">小米手机5 尊享版</a><p>4GB内存+128GB闪存，陶瓷版</p><span>1999元</span></li>
+        </ul>
+    </div>
+</div>
+<div id="background_grey">
+<!---智能硬件----->
+<div class="smart_area">
+	<div id="smart_content_up" class="center smart_content_up">
+		    <h2 class="float_l">智能硬件</h2>
+            <div class="float_r">
+                <span>查看全部</span>
+                <span style="">&gt;</span>
+            </div><div class="clearfoalt"></div>
+    </div>
+    <div id="smart_content_down" class="center smart_content_down">
+			<div id="smart_content_down_left" class="float_l smart_content_down_left">
+            	<img src="public/img/57c2f4fb-6743-44c6-b447-6bd55aaeef89.jpg">
+            </div>
+            <div id="smart_content_down_right" class="float_l smart_content_down_right">
+            	<ul>
+                	<li><img src="public/img/mingxing1.png"><a href="">小米手机5 尊享版</a><p>4GB内存+128GB闪存，陶瓷版</p><span>1999元</span></li>
+                    <li><img src="public/img/mingxing5.png"><a href="">小米手机5 尊享版</a><p>4GB内存+128GB闪存，陶瓷版</p><span>1999元</span></li>
+                    <li><img src="public/img/8.jpg"><a href="">小米手机5 尊享版</a><p>4GB内存+128GB闪存，陶瓷版</p><span>1999元</span></li>
+                    <li><img src="public/img/7.jpg"><a href="">小米手机5 尊享版</a><p>4GB内存+128GB闪存，陶瓷版</p><span>1999元</span></li>
+                    <li><img src="public/img/6.jpg"><a href="">小米手机5 尊享版</a><p>4GB内存+128GB闪存，陶瓷版</p><span>1999元</span></li>
+                    <li><img src="public/img/8.jpg"><a href="">小米手机5 尊享版</a><p>4GB内存+128GB闪存，陶瓷版</p><span>1999元</span></li>
+                    <li><img src="public/img/7.jpg"><a href="">小米手机5 尊享版</a><p>4GB内存+128GB闪存，陶瓷版</p><span>1999元</span></li>
+                    <li><img src="public/img/6.jpg"><a href="">小米手机5 尊享版</a><p>4GB内存+128GB闪存，陶瓷版</p><span>1999元</span></li>
+                </ul>
+            </div>
+	</div>
+
+</div><div class="clearfoalt"></div>
+
+
+<!---搭配----->
+<div class="smart_area">
+	<div  class="center smart_content_up">
+		    <h2 class="float_l">搭配</h2>
+            <div class="float_r">
+                <span>查看全部</span>
+                <span style="">&gt;</span>
+            </div><div class="clearfoalt"></div>
+    </div>
+    <div  class="center smart_content_down">
+			<div class="float_l smart_content_down_left">
+            	<img src="public/img/erji.jpg">
+                <img src="public/img/dianyuan.jpg">
+            </div>
+            <div  class="float_l smart_content_down_right">
+            	<ul>
+                	<li><img src="public/img/mingxing1.png"><a href="">小米手机5 尊享版</a><p>4GB内存+128GB闪存，陶瓷版</p><span>1999元</span></li>
+                    <li><img src="public/img/mingxing5.png"><a href="">小米手机5 尊享版</a><p>4GB内存+128GB闪存，陶瓷版</p><span>1999元</span></li>
+                    <li><img src="public/img/8.jpg"><a href="">小米手机5 尊享版</a><p>4GB内存+128GB闪存，陶瓷版</p><span>1999元</span></li>
+                    <li><img src="public/img/7.jpg"><a href="">小米手机5 尊享版</a><p>4GB内存+128GB闪存，陶瓷版</p><span>1999元</span></li>
+                    <li><img src="public/img/6.jpg"><a href="">小米手机5 尊享版</a><p>4GB内存+128GB闪存，陶瓷版</p><span>1999元</span></li>
+                    <li><img src="public/img/8.jpg"><a href="">小米手机5 尊享版</a><p>4GB内存+128GB闪存，陶瓷版</p><span>1999元</span></li>
+                    <li><img src="public/img/7.jpg"><a href="">小米手机5 尊享版</a><p>4GB内存+128GB闪存，陶瓷版</p><span>1999元</span></li>
+                    <li><img src="public/img/6.jpg"><a href="">小米手机5 尊享版</a><p>4GB内存+128GB闪存，陶瓷版</p><span>1999元</span></li>
+                </ul>
+            </div>
+	</div>
+
+</div>
+
+
+</div><!--灰色背景div结束---->
+<!--- 最底部信息---------->
+<footer class="footer">
+	<div class="center">
+    	<div class="footer_up">
+        	<div class="footer_up_item"><a>1小时快修服务</a></div>
+            <div class="separate"></div>
+            <div class="footer_up_item"><a>7天无理由退货</a></div>
+            <div class="separate"></div>
+            <div class="footer_up_item"><a>15天免费换货</a></div>
+            <div class="separate"></div>
+            <div class="footer_up_item"><a>满150元包邮</a></div>
+            <div class="separate"></div>
+            <div class="footer_up_item"><a>520余家售后网点</a></div>
+        </div>
+        <div class="footer_mid">
+        	<div class="footer_mid_left float_l">
+            	<dl>
+            		<dt>帮助中心</dt>
+                    <dd><a href="" >账户管理</a></dd>
+                    <dd><a href="" >购物指南</a></dd>
+                    <dd><a href="" >订单操作</a></dd>
+            	</dl>
+                <dl>
+            		<dt>帮助中心</dt>
+                    <dd><a href="" >账户管理</a></dd>
+                    <dd><a href="" >购物指南</a></dd>
+                    <dd><a href="" >订单操作</a></dd>
+            	</dl>
+                <dl>
+            		<dt>帮助中心</dt>
+                    <dd><a href="" >账户管理</a></dd>
+                    <dd><a href="" >购物指南</a></dd>
+                    <dd><a href="" >订单操作</a></dd>
+            	</dl>
+                <dl>
+            		<dt>帮助中心</dt>
+                    <dd><a href="" >账户管理</a></dd>
+                    <dd><a href="" >购物指南</a></dd>
+                    <dd><a href="" >订单操作</a></dd>
+            	</dl>
+                <dl>
+            		<dt>帮助中心</dt>
+                    <dd><a href="" >账户管理</a></dd>
+                    <dd><a href="" >购物指南</a></dd>
+                    <dd><a href="" >订单操作</a></dd>
+            	</dl>
+                <dl>
+            		<dt>帮助中心</dt>
+                    <dd><a href="" >账户管理</a></dd>
+                    <dd><a href="" >购物指南</a></dd>
+                    <dd><a href="" >订单操作</a></dd>
+            	</dl>
+            </div>
+            <div style=" width:1px; height:115px; border-left:#CCC solid 1px;float:left; margin-top:45px;"></div>
+            <div class="footer_mid_right float_r">
+            	 <dl>
+            		<dt style="color:#FF6733; font-size:20px;">400-100-5678</dt>
+                    <dd>周一至周日 8:00-18:00</dd>
+                    <dd>（仅收市话费）</dd>
+                    <div>7×24在线服务</div>
+            	</dl>
+            </div>
+        </div>
+        <div class="footer_down">
+        	<div class="footer_down_left  float_l">
+            	<img src="public/img/footer_left.png" alt="footer_left">
+            </div>
+            <div class="footer_down_right float_l">
+            	<img src="public/img/footer_right.png" alt="footer_right">
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

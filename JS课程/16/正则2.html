@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+<form>
+<input id="aaa" type="text" name="user" value="" onBlur="pipei(this.value)">
+<input id="bbb" type="tel" name="tel" value="" onBlur="pipei(this.value)">
+<input type="submit" value="提交" onClick="pipei(this.value)">
+</form>
+</body>
+
+<script>
+function pipei(a){
+	var   user = /[0-9a-zA-Z]@[0-9a-zA-Z\.]{3,}/gi;
+	var   tel =  /^[1][3-5|7-8][0-9]{9}$/gi;
+	//var reCat = /^[\$_a-zA-Z]/gi;
+	//var reCat = /^[^_a-zA-Z\$]/gi;
+	//var reCat = /ap?le/gi; //p字母出现0或1次  如ale  aple
+	//var reCat = /ap+le/gi; //p字母至少出现1次
+	//var reCat = /ap{0,8}le/gi; //
+	//var reCat = /^[A-Z][A-Za-z]+[0-9]+|[0-9]+[A-Za-z]+/gi;
+	alert(user.exec(a));
+	}
+	
+	
+    
+
+</script>
+</html>

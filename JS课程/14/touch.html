@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>手机阅读平台-动力学院</title>
+<meta content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0" name="viewport">
+</head>
+
+<body>
+<h1 id="myh1">RS</h1>
+<h1 id="myh2">RS</h1>
+<h1 id="myh3">RS</h1>
+<h1 id="myh4">RS</h1>
+<h1 id="myh5">RS</h1>
+<h1 id="myh6">RS</h1>
+<h1 id="myh7">RS</h1>
+<h1 id="myh8">RS</h1>
+<h1 id="myh9">RS</h1>
+<h1 id="myh10">RS</h1>
+<script>   
+ 
+var myh1 = document.getElementById("myh1");
+var myh2 = document.getElementById("myh2");
+var myh3 = document.getElementById("myh3");
+var myh4 = document.getElementById("myh4");
+var myh5 = document.getElementById("myh5");
+var myh6 = document.getElementById("myh6");
+var myh7 = document.getElementById("myh7");
+var myh8 = document.getElementById("myh8");
+var myh9 = document.getElementById("myh9");
+var myh10 = document.getElementById("myh10");
+
+document.ontouchstart = function(ev){
+	myh1.innerHTML =" T1: " + ev.touches[0].clientX;
+	myh2.innerHTML = " T2: " +ev.touches[1].clientX;
+	myh3.innerHTML =" T3: " + ev.touches[2].clientX;
+	myh4.innerHTML =" T4: " + ev.touches[3].clientX;
+	myh5.innerHTML =" T5: " + ev.touches[4].clientX;
+	myh6.innerHTML =" T6: " + ev.touches[5].clientX;
+	myh7.innerHTML =" T7: " + ev.touches[6].clientX;
+	myh8.innerHTML =" T8: " + ev.touches[7].clientX;
+	myh9.innerHTML =" T9: " + ev.touches[8].clientX;
+	myh10.innerHTML =" T10: " + ev.touches[9].clientX;
+	
+}
+
+</script>
+</body>
+</html>

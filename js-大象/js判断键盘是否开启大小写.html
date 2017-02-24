@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+<script>
+window.onload = function(){
+	
+	var pwd =document.querySelector("#password");
+	var hint = document.querySelector("#hint");
+	pwd.onkeydown = function (event){
+			//this.onkeydown = function(event){		
+			var i =0;	
+			var  e = event || window.event || arguments.callee.caller.arguments[0];
+			 if(e && e.keyCode==20){ // 按 Caps_Lock 
+			 i=(++i)%2;
+			 		 
+			 hint.innerHTML = "您开启了大写"
+			console.log(i);
+			 }else {
+				alert(e.keyCode); 
+				}
+             
+         
+	};
+}
+</script>
+<body bgcolor="#3A3A3A">
+
+<label for="password" style="color:#C2CCF3">密码</label><input id="password" name="password" type="password" /><span id="hint"></span>
+</body>
+</html>
+
+
+
+
