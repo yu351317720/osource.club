@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="jq/jquery-1.9.1.min.js"></script>
+    <title>Title</title>
+    <style type="text/css">
+        #box{
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        #box div{
+            position: absolute;
+            width: 10px;
+        }
+
+    </style>
+</head>
+<body>
+<button id="go">点击</button>
+<div id="box">
+</div>
+<script type="text/javascript">
+    var str='请写出你见过的字符编码，并简单说明为什么会产生乱码。请写出你见过的字符编码，并简单说明为什么会产生乱码。请写出你见过的字符编码，并简单说明为什么会产生乱码。'
+    var t = str.length;
+    var s1=document.getElementById("box");
+	var s2=document.getElementById("go");
+	var wh=document.documentElement.clientHeight;
+    var ww=document.documentElement.clientWidth;
+    function disperse(){
+		if(s1.innerHTML){
+			s1.innerHTML ="";
+		}
+		for(i=0;i<t;i++){
+			var div1=document.createElement("div");
+			s1.appendChild(div1);
+			div1.innerHTML=str[i];
+			div1.setAttribute("id",i);
+			div1.style.top=Math.floor(Math.random()*wh)+"px";
+			div1.style.left= Math.floor(Math.random()*ww)+"px";
+			div1.style.color = colorRandom();
+			// $("#box").append("<div>"+str[p]+"</div>");
+    	}	
+	}
+	disperse();	
+	function colorRandom(){
+	  var r =parseInt(Math.random()*255);
+	  var g = parseInt(Math.random()*255);
+	  var b= parseInt(Math.random()*255);
+	  var a = Math.random()*255;
+	  return "rgba("+r+","+g+","+b+","+a+")";
+  }
+$("#go").hover(
+	function(){
+	for(var i =0; i<t;i++){		
+		$("#"+i).animate({
+		left:i*20 ,
+		top:20
+		},"slow")
+	}	},
+	disperse
+);
+
+
+</script>
+</body>
+</html>
