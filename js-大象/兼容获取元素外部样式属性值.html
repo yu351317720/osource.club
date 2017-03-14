@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>demo</title>
+</head>
+<style>
+	#div{
+		width: 800px;
+	}	
+</style>
+<body>
+<div id="div" style=" width:600px; height: 200px; display: block; border: 1px solid red;  ">
+	
+</div>
+
+</body>
+
+
+<script type="text/javascript">
+	Object.prototype.getStyle = function (attr)//obj:访问的盒子  attr:访问的属性
+	{
+		if(this.currentStyle){
+			return this.curretStyle[attr];
+		}
+		else{
+			return window.getComputedStyle(this,null)[attr];
+		}
+	}
+		
+	console.log(document.getElementById("div").getStyle("border"));
+</script>
+
+</html>

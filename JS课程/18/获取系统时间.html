@@ -7,11 +7,11 @@
 
 <body onLoad="getTime()"><!--取消页面加载完第一秒内不现实的为题-->
 
-<div id="div"></div>
+<h1 id="div" style="color:#f00;"></h1>
 
 <script>
-function toChineseDay(arr){
-		switch(arr){
+function toChineseDay(num){
+		switch(num){
 		case 0 :return '日';
 				break;
 		case 1 :return '一';
@@ -26,7 +26,7 @@ function toChineseDay(arr){
 				break;
 		case 6 :return '六';
 				break;
-		default: return '没有该星期';
+		default: return ;
 		}
 	}
 
@@ -34,14 +34,14 @@ function getTime(){
 var date = new Date();
 var str1 = date.getFullYear()+'年'+ (date.getMonth()+1) +'月'+ date.getDate()+'号'+'星期'+ toChineseDay(date.getDay());
 var str2 = date.getHours()+ '时'+date.getMinutes()+ '分'+ date.getSeconds()+'秒';
-document.getElementById('div').innerHTML ='<h3 style="color:#f00;">现在你的系统时间为：' + (str1 + str2) +'</h3>';
+document.getElementById('div').innerHTML ='现在你的系统时间为：' + (str1 + str2);
 }
 
-function OneSecond (){
+function clock (){
 	var timer =null;
 	timer = setInterval(getTime,1000);
 }
-OneSecond();
+clock();
 </script>
 </body>
 </html>
